@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Definitely GitHub</title>
+    <style>
+        #navbar ul {
+            list-style-type: none;
+            height: 45px;
+            margin: 15px;
+            border: 1px;
+            background-color: black;
+            color: grey;
+        }
+        #navbar ul li {
+            text-align: center;
+            float: left;
+            display: inline;
+            border: 1px;
+            padding: 10px;
+        }
+        #logo {
+            height: 30px;
+            width: 30px;
+        }
+        #gray-part {
+            background-color: #FAFAFA;
+        }
+        #CodeUp {
+            display: inline;
+            text-align: center;
+        }
+        #CodeUp img {
+            display: inline;
+            height: 50px;
+            width: 50px;
+        }
+        #CodeUp p {
+            display: inline;
+            margin: 30px;
+        }
+        #menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border-bottom: 5px;
+            border-bottom-color: silver;
+        }
+        #menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        #menu li {
+            float: left;
+        }
+        #menu li a {
+            display: block;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            border-bottom: 1px solid silver;
+        }
+        #menu li a:hover {
+            border-bottom: 0;
+            border-right: 1px solid silver;
+            border-left: 1px solid silver;
+            border-top: 4px solid red;
+            padding: 12px 16px;
+        }
+        #menu li a:active {
+
+        }
+        .num {
+            background-color: silver;
+            border-radius: 10px;
+        }
+        #table tr th{
+            background-color: gray;
+        }
+        #table tr td {
+            position: relative;
+            left: 150px;
+            margin: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <ul>
+            <li><img src="imgs/githublogo.png" alt="" id="logo"></li>
+            <li>Pull Requests</li>
+            <li>Issues</li>
+            <li>Marketplace</li>
+            <li>Explore</li>
+        </ul>
+    </div>
+    <div id="gray-part">
+        <div id="CodeUp">
+            <img src="imgs/codeuplogo.png" alt="">
+            <p>Codeup</p>
+        </div>
+        <ul id="menu">
+            <li><a href="">Repositories <em class="num">39</em></a></li>
+            <li><a href="">People <em class="num">15</em></a></li>
+            <li><a href="">Teams <em class="num">7</em></a></li>
+            <li><a href="">Projects <em class="num">0</em></a></li>
+            <li><a href="">Settings</a></li>
+        </ul>
+    </div>
+    <div id="table-div">
+        <table id="table">
+            <th>CodeUp's Dev Team</th>
+            <tr>
+                <td>Kent Beck</td>
+                <td>Member</td>
+                <td>Team 1</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>
