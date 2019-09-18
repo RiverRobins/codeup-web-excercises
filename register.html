@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+    <style>
+        em {
+            text-decoration: line-through;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form method="POST" action="">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="*required" autofocus>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="*required">
+            <br>
+            <label for="confirm">Confirm Password:</label>
+            <input type="password" id="confirm" name="confirm" placeholder="*required">
+            <br>
+            <input type="checkbox" id="newsletter" checked>
+            <label for="newsletter">Sign up for our free <em>spam</em> newsletter!</label>
+            <br>
+            <button type="submit">Create New Account</button>
+        </form>
+    </div>
+</body>
+</html>
