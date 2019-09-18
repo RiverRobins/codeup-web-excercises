@@ -5,6 +5,7 @@
     <title>Definitely GitHub</title>
     <style>
         #navbar ul {
+            display: block;
             list-style-type: none;
             height: 45px;
             margin: 15px;
@@ -13,11 +14,14 @@
             color: grey;
         }
         #navbar ul li {
-            text-align: center;
             float: left;
+            text-align: center;
             display: inline;
             border: 1px;
             padding: 10px;
+        }
+        #navbar ul li a {
+            color: white;
         }
         #logo {
             height: 30px;
@@ -36,20 +40,20 @@
             width: 50px;
         }
         #CodeUp p {
+            text-align: center;
             display: inline;
-            margin: 30px;
+            font-size: 36px;
         }
         #menu {
             list-style-type: none;
-            margin: 0;
+            margin-top: 45px;
+            margin-bottom: 45px;
             padding: 0;
             overflow: hidden;
-            border-bottom: 5px;
-            border-bottom-color: silver;
         }
         #menu ul {
             list-style-type: none;
-            margin: 0;
+            margin-bottom: 45px;
             padding: 0;
             overflow: hidden;
         }
@@ -61,40 +65,56 @@
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
-            border-bottom: 1px solid silver;
+            border-bottom: 2px solid silver;
         }
         #menu li a:hover {
             border-bottom: 0;
-            border-right: 1px solid silver;
-            border-left: 1px solid silver;
+            border-right: 2px solid silver;
+            border-left: 2px solid silver;
             border-top: 4px solid red;
-            padding: 12px 16px;
+            padding: 13px 16px;
+            background-color: white;
         }
         #menu li a:active {
 
         }
         .num {
             background-color: silver;
-            border-radius: 10px;
+            color: gray;
+            border-radius: 40px / 20px;
+            width: auto;
         }
-        #table tr th{
-            background-color: gray;
+        div h4 {
+            margin-top: 0;
+            font-size: 26px;
+            background-color: silver;
+            padding-left: 60px;
+            padding-bottom: 20px;
+            padding-top: 20px;
         }
-        #table tr td {
+        #people {
+            border: 1px solid gray;
+        }
+        label {
             position: relative;
-            left: 150px;
-            margin: 30px;
+            top: 1em;
+        }
+        div.person {
+            display: block;
+        }
+        div.person ul {
+            float: right;
         }
     </style>
 </head>
 <body>
     <div id="navbar">
         <ul>
-            <li><img src="imgs/githublogo.png" alt="" id="logo"></li>
-            <li>Pull Requests</li>
-            <li>Issues</li>
-            <li>Marketplace</li>
-            <li>Explore</li>
+            <li><a href=""><img src="imgs/githublogo.png" alt="" id="logo"></a></li>
+            <li><a href="">Pull Requests</a></li>
+            <li><a href="">Issues</a></li>
+            <li><a href="">Marketplace</a></li>
+            <li><a href="">Explore</a></li>
         </ul>
     </div>
     <div id="gray-part">
@@ -103,33 +123,47 @@
             <p>Codeup</p>
         </div>
         <ul id="menu">
-            <li><a href="">Repositories <em class="num">39</em></a></li>
-            <li><a href="">People <em class="num">15</em></a></li>
-            <li><a href="">Teams <em class="num">7</em></a></li>
-            <li><a href="">Projects <em class="num">0</em></a></li>
+            <li><a href="">Repositories <em class="num">  39  </em></a></li>
+            <li><a href="">People <em class="num">  15  </em></a></li>
+            <li><a href="">Teams <em class="num">  7  </em></a></li>
+            <li><a href="">Projects <em class="num">  0  </em></a></li>
             <li><a href="">Settings</a></li>
         </ul>
     </div>
-    <div id="table-div">
-        <table id="table">
-            <tr><th>CodeUp's Dev Team</th></tr>
-            <tr>
-                <td>Kent Beck</td>
-                <td>Member</td>
-                <td>1 Team</td>
-            </tr>
-            <tr>
-                <td>CodeUp</td>
-                <td>Member</td>
-                <td>1 Team</td>
-            </tr>
-            <tr>
-                <td>Martin Fowler</td>
-                <td>Member</td>
-                <td>0 Teams</td>
-            </tr>
-        </table>
+    <div id="people">
+        <h4>Codeup's dev team</h4>
+        <div class="person" id="p1">
+            <div>
+                <h5>Kent Beck</h5>
+                <label for="pfp1">KentBeck</label>
+                <img src="" alt="temp" id="pfp1">
+            </div>
+            <ul>
+                <li>Member</li>
+                <li>1 Team</li>
+            </ul>
+        </div>
+        <div class="person" id="p2">
+            <div>
+                <h5>Codeup Instruction Staff</h5>
+                <label for="pfp2">CodeupInstructors</label>
+                <img src="" alt="temp" id="pfp2">
+            </div>
+            <ul>
+                <li>Member</li>
+                <li>1 Team</li>
+            </ul>
+        </div>
+        <div class="person" id="p3">
+            <div>
+                <h5>Martin Fowler</h5>
+                <img src="" alt="temp" id="pfp3">
+            </div>
+            <ul>
+                <li>Member</li>
+                <li>0 Teams</li>
+            </ul>
+        </div>
     </div>
-
 </body>
 </html>
