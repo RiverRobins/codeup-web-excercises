@@ -19,27 +19,45 @@
             <br>
             <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Tell us about yourself."></textarea>
             <br>
-            <label>How did you hear about us?</label>
+            <div>
+                <label>How did you hear about us?</label>
+                <br>
+                <!--
+                <input type="radio" name="hear" value="billboard" id="billboard">
+                <label for="billboard">Billboard</label>
+                <br>
+                <input type="radio" name="hear" value="radio" id="radioad">
+                <label for="radioad">Radio</label>
+                <br>
+                <input type="radio" name="hear" value="internet" id="internetad">
+                <label for="internetad">Internet Advertisement</label>
+                <br>
+                <input type="radio" name="hear" value="other" id="other">
+                <label for="other">Other</label>
+                -->
+                <input type="checkbox" name="hear" value="billboard" id="billboard">
+                <label for="billboard">Billboard</label>
+                <br>
+                <input type="checkbox" name="hear" value="radio" id="radioad">
+                <label for="radioad">Radio</label>
+                <br>
+                <input type="checkbox" name="hear" value="internet" id="internetad">
+                <label for="internetad">Internet Advertisement</label>
+                <br>
+                <input type="checkbox" name="hear" value="other" id="other">
+                <label for="other">Other</label>
+            </div>
             <br>
-            <input type="radio" name="hear" id="billboard">
-            <label for="billboard">Billboard</label>
-            <br>
-            <input type="radio" name="hear" id="radioad">
-            <label for="radioad">Radio</label>
-            <br>
-            <input type="radio" name="hear" id="internetad">
-            <label for="internetad">Internet Advertisement</label>
-            <br>
-            <input type="radio" name="hear" id="other">
-            <label for="other">Other</label>
-            <br>
+            <div>
             <label for="browser">What browser are you using?</label>
             <br>
-            <select name="browser" id="browser">
-                <option value="chrome" selected>Chrome(the correct answer)</option>
-                <option value="explorer"> Internet Explorer</option>
-                <option value="firefox">Fire Fox</option>
-            </select>
+                <select name="browser" id="browser">
+                    <option value="chrome" selected>Chrome(the correct answer)</option>
+                    <option value="explorer"> Internet Explorer</option>
+                    <option value="firefox">Fire Fox</option>
+                    <option value="torr">Torr(the other correct answer)</option>
+                </select>
+            </div>
             <br>
             <button type="submit">Submit</button>
         </form>
