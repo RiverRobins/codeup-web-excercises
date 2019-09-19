@@ -20,7 +20,40 @@
             <label for="area">Square footage: </label>
             <input type="number" id="area" name="square-footage">
             <br>
-            <label for=""></label>
+            <label for="price-min">Min price: $</label>
+            <input type="number" id="price-min" name="price-min">
+            <label for="price-max">Max price: $</label>
+            <input type="number" id="price-max" name="price-max">
+            <br>
+            <label for="zip">Zipcode: </label>
+            <input type="number" id="zip" name="zipcode">
+            <br>
+            <label for="num-of-bath">Number of bathrooms: </label>
+            <input type="number" id="num-of-bath" name="number-of-bathrooms">
+            <br>
+            <label for="num-of-bed">Number of bedrooms: </label>
+            <input type="number" id="num-of-bed" name="bedrooms">
+            <br>
+            <label for="prev-owner">Previous owner</label>
+            <input type="text" id="prev-owner" name="previous owner">
+            <label for="prev-owner-phone">Phone: </label>
+            <input type="text" id="prev-owner-phone" name="previous-owner-number">
+            <br>
+            <label for="foreclosures?">Include foreclosures: </label>
+            <select name="foreclosures" id="foreclosures?">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+            <br>
+            <label for="tax-year">Tax Year: </label>
+            <select name="tax-year" id="tax-year">
+                <option value="2019" selected>2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+            </select>
+            <br>
+            <button type="submit">Search</button>
         </form>
     </div>
 </body>
