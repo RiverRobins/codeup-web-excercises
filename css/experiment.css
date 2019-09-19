@@ -1,0 +1,42 @@
+body {
+    animation-duration: 4s;
+    animation-name: x;
+    animation-iteration-count: infinite;
+    animation-play-state: unset;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+@keyframes x {
+    0% {
+        background-color: blue;
+    }
+    100% {
+        background-color: red;
+    }
+    /*50% {*/
+    /*    background-color: blue;*/
+    /*}*/
+    /*75% {*/
+    /*    background-color: red;*/
+    /*}*/
+    /*100% {*/
+    /*    background-color: blue;*/
+    /*}*/
+}
+div.effect {
+    height: 50px;
+    width: 50px;
+    position: relative;
+    animation-name: y;
+}
+@keyframes y {
+    0% {
+        background-color: green;
+        left: 0;
+        top: 0;
+    }
+    25% {
+        background-color: greenyellow;
+        left: 50;
+    }
+}
