@@ -1,21 +1,89 @@
-.fancy-header {
-    color: purple;
+body {
+    font-family: Arial;
+    animation-name: x;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-play-state: running;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+@keyframes x {
+    0% {
+        background-color: cornflowerblue;
+    }
+    50% {
+        background-color: darkseagreen;
+    }
+    100% {
+        background-color: cornflowerblue;
+    }
+}
+#nav-container {
+    background-color: lightgray;
+    padding: 15px;
+    border: 1px solid gray;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 20px;
+    margin-bottom: auto;
+    box-shadow: gray;
+}
+a.nav {
+    background-color: silver;
+    padding: 10px;
+    border: 1px solid gray;
+    text-decoration: none;
+}
+a.nav:hover {
+    animation-name: nav;
+    animation-duration: 1s;
+    background-color: blue;
+}
+@keyframes nav {
+    from {
+        background-color: silver;
+    }
+    to {
+        background-color: blue;
+    }
+}
+.drop-button {
+    background-color: silver;
+}
+.drop-content {
+    display: inline-block;
+    position: relative;
+    background-color: silver;
+}
+.dropped {
+    display: none;
+    position: absolute;
+    background-color: silver;
+    padding: 5px;
+    text-decoration: none;
+}
+.drop-button:hover a {
+    display: block;
+    animation-name: nav;
+    animation-duration: 1s;
+    background-color: blue;
 }
 #main {
+    background-color: silver;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 15%;
     text-align: center;
+}
+.fancy-header {
+    color: purple;
 }
 h1, h2, h3, h4, h5, h6 {
     color: brown;
     text-decoration: underline;
 }
-body {
-    background-color: aqua;
-    background-image: url("../imgs/background0.jpg");
-    background-repeat: space;
-    font-family: "Comic Sans MS";
-}
 ul {
-    list-style: square;
+    list-style: none;
 }
 td {
     padding: 1em;
@@ -24,6 +92,7 @@ td {
 }
 table {
     table-border-color-dark: aqua;
+    margin-left: 35%;
 }
 /*tr {*/
 /*    padding: 2em;*/
@@ -37,4 +106,11 @@ a:hover {
 }
 a:visited {
     color: floralwhite;
+}
+#go-to-top {
+    width: 60px;
+    height: 30px;
+    background-color: coral;
+    border-radius: 30px 30px;
+    position: center;
 }
