@@ -8,12 +8,19 @@
     <h1>Deimos</h1>
     <p>This is my morning warm-up page.</p>
     <script>
-        function addThings(a, b) {
-            return (a + b);
+        //function addThings(a, b) {
+        //    return (a + b);
+        //}
+        //console.log(addThings(3, 8));
+        //console.log(addThings(2, 201));
+        //console.log(addThings(4409, 2536));
+
+        function findTriArea(a, b, c) {
+            var p = (a + b + c) / 2;
+            return Math.sqrt(p * (p - a) * (p - b) * (p - c));
         }
-        console.log(addThings(3, 8));
-        console.log(addThings(2, 201));
-        console.log(addThings(4409, 2536));
+        console.log(findTriArea(5, 6, 7));
+
     </script>
 </body>
 </html>
