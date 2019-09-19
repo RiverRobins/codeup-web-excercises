@@ -10,20 +10,14 @@
 </head>
 
 <body>
+    <a id="top"></a>
     <div id="nav-container">
         <a href="" class="nav" id="home">Home</a>
         <a href="" class="nav" id="thing">Thing</a>
         <a href="" class="nav" id="thing2">Thing 2</a>
-
-        <a href="" class="drop-button nav" id="about-us">About Us</a>
-        <div class="drop-content">
-            <a href="" id="about">About</a>
-            <a href="" id="contact">Contact</a>
-        </div>
-
+        <a href="" class="nav" id="about">About</a>
     </div>
     <div id="main">
-        <a id="top"></a>
         <h1 class="fancy-header">Welcome to Veridian Dynamics!</h1>
         <p>At Veridian Dynamics, we solve your problems with technology</p>
         <hr>
@@ -35,7 +29,7 @@
                 <li>Technology</li>
             </ul>
             <h4>Our process:</h4>
-            <ol>
+            <ol style="list-style-position: inside">
                 <li>Plan</li>
                 <li>Evaluate</li>
                 <li>Implement</li>
@@ -50,13 +44,13 @@
         <hr>
         <h2>Company Vision!</h2>
         <span>
-            <img src="imgs/thing1.svg" alt="img1">
-            <img src="imgs/thing2.svg" alt="img3">
+            <img src="imgs/thing1.svg" class="img1" alt="img1">
+            <img src="imgs/thing2.svg" class="img2" alt="img3">
 
         </span>
         <div>
-            <img src="imgs/thing1.svg" alt="img2">
-            <img src="imgs/thing2.svg" alt="img4">
+            <img src="imgs/thing1.svg" class="img1" alt="img2">
+            <img src="imgs/thing2.svg" class="img2" alt="img4">
         </div>
         <h5>Our Product</h5>
         <table>
@@ -84,5 +78,7 @@
         <p><em>All products come with out quality gaurantee</em>&#8482</p>
     </div>
 </body>
-<a href="#top" id="go-to-top">Go to top</a>
+<div id="go-to-container">
+    <a href="#top" id="go-to-top">Go to top</a>
+</div>
 </html>

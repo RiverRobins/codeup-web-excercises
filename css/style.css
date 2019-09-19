@@ -47,33 +47,13 @@ a.nav:hover {
         background-color: blue;
     }
 }
-.drop-button {
-    background-color: silver;
-}
-.drop-content {
-    display: inline-block;
-    position: relative;
-    background-color: silver;
-}
-.dropped {
-    display: none;
-    position: absolute;
-    background-color: silver;
-    padding: 5px;
-    text-decoration: none;
-}
-.drop-button:hover a {
-    display: block;
-    animation-name: nav;
-    animation-duration: 1s;
-    background-color: blue;
-}
 #main {
     background-color: silver;
     margin-left: 10%;
     margin-right: 10%;
     margin-bottom: 15%;
     text-align: center;
+    border: 1px solid gray;
 }
 .fancy-header {
     color: purple;
@@ -108,9 +88,18 @@ a:visited {
     color: floralwhite;
 }
 #go-to-top {
-    width: 60px;
-    height: 30px;
+    text-align: center;
+    padding: 18px;
     background-color: coral;
-    border-radius: 30px 30px;
-    position: center;
+    position: fixed;
+    bottom: 5px;
+    text-decoration: none;
+}
+.img1 {
+    height: 240px;
+    width: 150px;
+}
+.img2 {
+    height: 240px;
+    width: 240px;
 }
