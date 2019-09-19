@@ -1,3 +1,40 @@
 .fancy-header {
     color: purple;
 }
+#main {
+    text-align: center;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: brown;
+    text-decoration: underline;
+}
+body {
+    background-color: aqua;
+    background-image: url("../imgs/background0.jpg");
+    background-repeat: space;
+    font-family: "Comic Sans MS";
+}
+ul {
+    list-style: square;
+}
+td {
+    padding: 1em;
+    border: 1px solid red;
+    margin: 0;
+}
+table {
+    table-border-color-dark: aqua;
+}
+/*tr {*/
+/*    padding: 2em;*/
+/*    border: 1px solid yellow;*/
+/*}*/
+a {
+    color: cadetblue;
+}
+a:hover {
+    color: chartreuse;
+}
+a:visited {
+    color: floralwhite;
+}
