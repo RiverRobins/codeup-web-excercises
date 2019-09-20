@@ -47,6 +47,9 @@ a.nav:hover {
         background-color: blue;
     }
 }
+#about {
+    margin-left: 80px;
+}
 #main {
     background-color: silver;
     margin-left: 10%;
@@ -96,11 +99,12 @@ a:visited {
     bottom: 5px;
     text-decoration: none;
 }
-.img1 {
-    height: 240px;
-    width: 150px;
+img {
+    height: 60px;
+    width: 60px;
 }
-.img2 {
+img:hover {
     height: 240px;
     width: 240px;
+    margin-top: -50px;
 }
