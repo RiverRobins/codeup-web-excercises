@@ -37,7 +37,7 @@ body {
 }
 
 .moving {
-    position: relative;
+    position: static;
     left: 10px;
     width: 100px;
     height: 100px;
@@ -55,10 +55,10 @@ body {
 @keyframes moving {
     0% {
         margin: 10px;
-        left: 0px;
+        transform: translateX(0px);
     }
     100% {
-        left: 1140px;
         margin: 10px;
+        transform: translateX(1140px);
     }
 }
