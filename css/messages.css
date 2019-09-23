@@ -1,0 +1,24 @@
+body , html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+:root {
+    --info-bg: lightblue;
+    --info-text: blue;
+    --success-bg: lightgreen;
+    --success-text: green;
+    --warning-bg: lightyellow;
+    --warning-message: #919100;
+    --err-bg: salmon;
+    --err-text: maroon;
+}
+.message {
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;
+}
+.
