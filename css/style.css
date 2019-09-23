@@ -27,10 +27,12 @@ body {
     margin-top: 20px;
     margin-bottom: auto;
     box-shadow: gray;
+    display: flex;
 }
 a.nav {
     background-color: silver;
     padding: 10px;
+    margin: 10px;
     border: 1px solid gray;
     text-decoration: none;
 }
@@ -48,8 +50,9 @@ a.nav:hover {
     }
 }
 #about {
-    position: relative;
-    left: 690px;
+    /*position: relative;*/
+    /*left: 690px;*/
+    margin-left: auto;
 }
 #main {
     background-color: silver;
