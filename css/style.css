@@ -100,11 +100,21 @@ a:visited {
     text-decoration: none;
 }
 img {
-    height: 60px;
-    width: 60px;
+    height: 120px;
+    width: 120px;
 }
-img:hover {
-    height: 240px;
-    width: 240px;
-    margin-top: -50px;
+/*img:hover {*/
+/*    height: 240px;*/
+/*    width: 240px;*/
+/*    margin-top: -50px;*/
+/*}*/
+.scroll-imgs {
+    overflow: auto;
+    white-space: nowrap;
+}
+.scroll-imgs img {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 10px;
 }
