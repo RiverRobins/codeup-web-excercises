@@ -7,11 +7,11 @@ body , html {
 }
 :root {
     --info-bg: lightblue;
-    --info-text: blue;
+    --info-text: darkblue;
     --success-bg: lightgreen;
     --success-text: green;
     --warning-bg: lightyellow;
-    --warning-message: #919100;
+    --warning-text: #919100;
     --err-bg: salmon;
     --err-text: maroon;
 }
@@ -21,4 +21,19 @@ body , html {
     padding: 5px;
     margin: 10px;
 }
-.
+.message-info {
+    background-color: var(--info-bg);
+    color: var(--info-text);
+}
+.message-success {
+    background-color: var(--success-bg);
+    color: var(--success-text);
+}
+.message-warning {
+    background-color: var(--warning-bg);
+    color: var(--warning-text);
+}
+.message-error {
+    background-color: var(--err-bg);
+    color: var(--err-text);
+}
