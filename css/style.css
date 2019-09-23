@@ -48,7 +48,8 @@ a.nav:hover {
     }
 }
 #about {
-    margin-left: 80px;
+    position: relative;
+    left: 690px;
 }
 #main {
     background-color: silver;
