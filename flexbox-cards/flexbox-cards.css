@@ -67,6 +67,8 @@ a {
 
 .container {
     /* This is a flex container */
+    display: flex;
+
 }
 
 .card {
