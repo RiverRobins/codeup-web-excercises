@@ -2,37 +2,55 @@
     box-sizing: border-box;
     background-color: darkgray;
     color: black;
+    display: flex;
 }
 .nav-container {
     box-sizing: border-box;
+    display: flex;
+    padding: 0;
     width: 100%;
-    height: auto;
+    justify-self: center;
+    align-items: center;
+    justify-content: space-between;
+    height: 3em;
+    overflow: hidden;
+    flex-wrap: nowrap;
 }
 .nav-list {
     box-sizing: border-box;
     list-style: none;
     display: flex;
     align-items: center;
+    flex-direction: row;
+    padding: 0;
+}
+.right {
+    /*justify-self: flex-start;*/
+    /*align-self: flex-start;*/
+    justify-content: flex-start;
 }
 .left {
-    margin-left: auto;
+    /*justify-self: flex-end;*/
+    /*align-self: flex-end;*/
+    justify-content: flex-end;
+}
+.mid {
+    justify-self: center;
 }
 .nav-item a {
     box-sizing: border-box;
-    display: inline-block;
-    padding: 0.5em;
+    display: flex;
+    padding: 1.5em;
     color: black;
+    font-weight: bold;
+    text-decoration: none;
     font-size: 1em;
 }
 .nav-item a:hover {
     background-color: blue;
 }
-.nav-item a h3 {
-    box-sizing: border-box;
-    margin: 0 auto;
-}
 .nav-item a img {
-    margin-left: auto;
+    display: flex;
     box-sizing: border-box;
     width: 30px;
     height: 30px;
