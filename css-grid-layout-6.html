@@ -2,9 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Layout 6</title>
+    <style>
+        .grid-container {
+            display: grid;
+            height: 800px;
+            grid-template-rows: 75px 1fr 1fr 75px;
+            grid-template-columns: 20% 1fr 20%;
+            grid-gap: 10px;
+        }
+        .cont {
+            background-color: yellowgreen;
+        }
+        .header {
+            grid-area: 1 / 1 / 2 / 4;
+        }
+        .nav {
+            grid-area: 2 / 1 / 4 / 2;
+        }
+        .footer {
+            grid-area: 4 / 1 / -1 / -1;
+        }
+        .article {
+            grid-area: 2 / 2 / 3 / 4;
+        }
+        .ads {
+            grid-area: 3 / 2 / -2 / -1
+        }
+    </style>
 </head>
 <body>
-$END$
+<div class="grid-container">
+    <div class="header cont"><p class="content">Header</p></div>
+    <div class="nav cont"><p class="content">Nav</p></div>
+    <div class="article cont"><p class="content">Article</p></div>
+    <div class="ads cont"><p class="content">Ads</p></div>
+    <div class="footer cont"><p class="content">Footer</p></div>
+</div>
 </body>
 </html>
