@@ -18,7 +18,7 @@ body {
     /* TODO: the height of the wrapper should be 100 viewport height units */
     display: grid;
     height: 100vh;
-    grid-template-columns: auto repeat(3, 400px) auto;
+    grid-template-columns: 1fr repeat(3, 400px) 1fr;
     grid-gap: 1em;
 }
 
@@ -31,11 +31,12 @@ ul {
 header {
     background: purple;
     /* TODO: define the grid area of header such that it takes up the first row and middle three columns */
-    gr
+    grid-area: 1 / 2 / 2 / 5;
 }
 
 nav {
     /* TODO: define the grid area of nav such that it takes up the second column of the second row  */
+    grid-area: 2 / 2 / 3 / 3;
 }
 
 main {
@@ -43,10 +44,16 @@ main {
     /* TODO: make main a grid container as well */
     /* TODO: define main to contain three columns that together take up equally the full width of main and have a 1em gap between grid items */
     overflow: auto;
+    grid-area: 2 / 3 / 3 / 5;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 header ul {
     /* TODO: use flex box to horizontally line up all list items */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 header a {
@@ -55,7 +62,7 @@ header a {
 
 header ul li:nth-of-type(2) {
     /* TODO: uncomment the next line and add a value which causes Flexbox to automatically fill in extra space on it's left side */
-    /*margin-left: ;*/
+    margin-left: auto;
     border-right: 1px solid white;
 }
 
@@ -67,6 +74,7 @@ header a:hover {
 .header-background {
     background: purple;
     /* TODO: define the grid area of this element to take up the entire first row of the .container grid  */
+    grid-area: 1 / 1 / 2 / span 6;
 }
 
 nav ul {
@@ -111,6 +119,7 @@ nav a:hover {
     border-radius: 10px;
     position: relative;
     /* TODO: add a property that causes a transition of the border from lightgrey to near black in .2 seconds */
+    transition-duration: 0.2s;
 }
 
 .card:hover {
