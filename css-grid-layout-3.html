@@ -2,9 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Layout 11</title>
+    <style>
+        .grid-container {
+            display: grid;
+            height: 800px;
+            grid-template-rows: 3fr repeat(4, 1fr);
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+        }
+        .cont {
+            background-color: yellow;
+        }
+        .one {
+            grid-area: 1 / 1 / 2 / 5;
+        }
+        .two {
+            grid-area: 2 / 1 / 6 / 2;
+        }
+        .three {
+            grid-area: ;
+        }
+        .four {
+            grid-area:  2 / 3 / 3 / 5;
+        }
+        .five {
+            grid-area: 3 / 2 / 4 / 4;
+        }
+        .ten {
+            grid-area: 5 / 2 / 5 / 5;
+        }
+    </style>
 </head>
 <body>
-$END$
+<div class="grid-container">
+    <div class="one cont"><p class="content">1</p></div>
+    <div class="two cont"><p class="content">2</p></div>
+    <div class="three cont"><p class="content">3</p></div>
+    <div class="four cont"><p class="content">4</p></div>
+    <div class="five cont"><p class="content">5</p></div>
+    <div class="cont six"><p class="content">6</p></div>
+    <div class="cont seven"><p class="content">7</p></div>
+    <div class="cont eight"><p class="content">8</p></div>
+    <div class="cont nine"><p class="content">9</p></div>
+    <div class="cont ten"><p class="content">10</p></div>
+</div>
 </body>
-</html>
