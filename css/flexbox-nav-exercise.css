@@ -10,13 +10,8 @@ body {
 }
 .nav-container {
     box-sizing: border-box;
-    display: flex;
-    padding: 0;
-    width: 100%;
-    justify-self: center;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: nowrap;
+    display: grid;
+    grid-template-columns: repeat(6, 50px);
 }
 .nav-list {
     box-sizing: border-box;
