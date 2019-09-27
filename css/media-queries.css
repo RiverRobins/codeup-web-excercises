@@ -1,0 +1,16 @@
+.alert-info {
+    position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.alert-info a {
+    background-color: lightskyblue;
+    border: 2px solid gray;
+    padding: 10px 10px 15px 15px;
+
+}
+h1 {
+    position: center;
+    margin-left: 120px;
+}
