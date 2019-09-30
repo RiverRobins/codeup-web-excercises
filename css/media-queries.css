@@ -16,8 +16,8 @@
     text-decoration: none;
 }
 h1 {
-    position: center;
-    margin-left: 120px;
+    display: flex;
+    justify-content: center;
 }
 nav ul {
     list-style: none;
