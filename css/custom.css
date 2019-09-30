@@ -1,0 +1,17 @@
+nav {
+    position: center;
+}
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    background-color: lightgray;
+    width: 80%;
+    border: 1px solid silver;
+    border-top: 2px solid darkgray;
+}
+nav ul li {
+    color: gray;
+    height: 100%;
+    width: 100%;
+}
