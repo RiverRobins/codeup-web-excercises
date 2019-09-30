@@ -60,18 +60,22 @@ nav ul li a {
     height: 200px;
 }
 section {
+    box-sizing: border-box;
     width: calc(100% - 10px);
     margin-left: 5px;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
+    display: inline-block;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*justify-content: center;*/
+    /*align-content: center;*/
 }
 .sub-section {
     width: calc(100% - 10px);
     font-style: italic;
 }
+
+
 @media screen and (min-width:500px) {
     .alert-info {
         position: center;
@@ -82,13 +86,13 @@ section {
     h1 {
         float: left;
         display: inline-block;
-        margin-left: 120px;
+        margin: 10px;
     }
     nav ul {
-        display: inline-block;
+        margin: 10px;
         list-style: none;
         position: unset;
-        justify-self: center;
+        justify-self: flex-end;
         display: flex;
         flex-direction: row;
         flex-flow: row;
@@ -114,29 +118,44 @@ section {
     }
     .nav-links {
         padding: unset;
+        justify-content: flex-end;
     }
     .header-img {
         box-sizing: border-box;
-        overflow: hidden;
-        justify-self: center;
-        display: flex;
-        justify-content: center;
-    }
-    .header-img img {
-        width: calc(100% - 10px);
-        height: 200px;
-    }
-    section {
-        width: calc(100% - 10px);
-        margin-left: 5px;
-        padding: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-content: center;
+        justify-self: center;
+    }
+    .header-img img {
+        justify-self: center;
+        width: 890px;
+        height: 385px;
+    }
+    section {
+        width: calc(50% - 10px);
+        margin-left: 5px;
+        padding: 0;
+        display: inline-block;
+        float: left;
+        /*display: flex;*/
+        /*flex-direction: column;*/
+        /*justify-content: center;*/
+        /*align-content: center;*/
     }
     .sub-section {
-        width: calc(100% - 10px);
+        width: calc(50% - 10px);
         font-style: italic;
+    }
+    footer {
+        margin-top: 500px;
+        height: 400px;
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+    footer div {
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
     }
 }
