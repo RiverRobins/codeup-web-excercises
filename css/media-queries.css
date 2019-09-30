@@ -5,15 +5,138 @@
     align-items: center;
 }
 .alert-info a {
+    box-sizing: border-box;
     background-color: lightskyblue;
     border: 2px solid gray;
-    padding: 10px 10px 15px 15px;
-
+    /*padding: 10px 10px 15px 15px;*/
+    height: 32px;
+    width: calc(100% - 10px);
+    text-align: center;
+    color: black;
+    text-decoration: none;
 }
 h1 {
     position: center;
     margin-left: 120px;
 }
+nav ul {
+    list-style: none;
+    position: center;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    flex-flow: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+nav ul li {
+    box-sizing: border-box;
+    height: 35px;
+    width: calc(100% - 10px);
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    background-color: lightgray;
+    margin-top: 10px;
+}
+nav ul li a {
+    color: blue;
+}
+.nav-links {
+    padding: unset;
+}
+.header-img {
+    box-sizing: border-box;
+    overflow: hidden;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+}
+.header-img img {
+    width: calc(100% - 10px);
+    height: 200px;
+}
+section {
+    width: calc(100% - 10px);
+    margin-left: 5px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+.sub-section {
+    width: calc(100% - 10px);
+    font-style: italic;
+}
 @media screen and (min-width:500px) {
-
+    .alert-info {
+        position: center;
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+    h1 {
+        float: left;
+        display: inline-block;
+        margin-left: 120px;
+    }
+    nav ul {
+        display: inline-block;
+        list-style: none;
+        position: unset;
+        justify-self: center;
+        display: flex;
+        flex-direction: row;
+        flex-flow: row;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+    nav ul li {
+        float: right;
+        box-sizing: border-box;
+        height: 35px;
+        width: 10%;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        text-align: center;
+        background-color: white;
+        margin-left: 10px;
+    }
+    nav ul li a {
+        color: blue;
+    }
+    .nav-links {
+        padding: unset;
+    }
+    .header-img {
+        box-sizing: border-box;
+        overflow: hidden;
+        justify-self: center;
+        display: flex;
+        justify-content: center;
+    }
+    .header-img img {
+        width: calc(100% - 10px);
+        height: 200px;
+    }
+    section {
+        width: calc(100% - 10px);
+        margin-left: 5px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+    .sub-section {
+        width: calc(100% - 10px);
+        font-style: italic;
+    }
 }
