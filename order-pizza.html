@@ -9,234 +9,229 @@
     <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Logo</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Logo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Menu</a>
-            </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="search stores nearby" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </div>
-</nav>
-
-
-<div class="jumbotron jumbotron-fluid">
-    <div class="container-fluid">
-        <h1 class="display-4">Welcome to Pizza World</h1>
-    </div>
-</div>
-
-<div class="container" style="padding-left: 10%; padding-right: 10%">
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#crust" role="tab" aria-controls="home" aria-selected="true"><span class="badge badge-secondary" style="background-color: silver; border-radius: 30px">1 </span> Crust</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#cheese" role="tab" aria-controls="profile" aria-selected="false"><span class="badge badge-secondary" style="background-color: silver; border-radius: 30px">2 </span>Sauce and Cheese</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#toppings" role="tab" aria-controls="contact" aria-selected="false"><span class="badge badge-secondary" style="background-color: silver; border-radius: 30px">3 </span>Toppings</a>
-        </li>
-    </ul>
-    <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="crust" role="tabpanel" aria-labelledby="home-tab">
-            <div class="card" >
-                <div class="card">
-                    <div class="card-header" style="background-color: dodgerblue; color: white">
-                        Choose Size and Crust
-                    </div>
-                    <div class="card-body">
-                        <div class="card">
-                            <div class="card-header" style="color: gray">
-                                Hand-Tossed
-                            </div>
-                            <div class="card-body">
-                                <form action="">
-                                    <div class="form-check">
-                                        <input class="form-check-input" name="crust" type="radio" checked value="" id="defaultCheck1">
-                                        <label class="form-check-label" for="defaultCheck1">
-                                            Small 10"
-                                        </label>
-                                        <br>
-                                        <input class="form-check-input" name="crust" type="radio" checked value="" id="defaultCheck2">
-                                        <label class="form-check-label" for="defaultCheck2">
-                                            Medium 12"
-                                        </label>
-                                    </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" style="color: gray">
-                                Thin
-                            </div>
-                            <div class="card-body">
-                                    <div class="form-radio">
-                                        <input class="form-radio-input" name="crust" type="radio" value="" id="defaultCheck3">
-                                        <label class="form-radio-label" for="defaultCheck3">
-                                            Medium 12"
-                                        </label>
-                                        <br>
-                                        <input class="form-radio-input" name="crust" type="radio" value="" id="defaultCheck4">
-                                        <label class="form-radio-label" for="defaultCheck4">
-                                            Large 14"
-                                        </label>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="btn-group go-right" role="group" aria-label="Basic example" style="background-color: dodgerblue; color: white">
-                <button type="button" class="btn btn-secondary" style="background-color: dodgerblue; color: white"><a style="background-color: dodgerblue; background-image: none; color: white" class="" id="button5" data-toggle="tab" href="#cheese" role="tab" aria-controls="profile" aria-selected="false">Next</a></button>
-            </div>
-    <!--        <div class="btn-group" role="group" aria-label="Basic example" style="background-color: dodgerblue; color: white">-->
-    <!--            <button type="button" class="btn btn-secondary" style="background-color: dodgerblue; color: white"><a style="background-color: dodgerblue; background-image: none; color: white" class="active" id="home-button" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Crust</a></button>-->
-    <!--            <button type="button" class="btn btn-secondary" style="background-color: dodgerblue; color: white"><a style="background-color: dodgerblue; background-image: none; color: white" class="" id="button2" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Sauce and Cheese</a></button>-->
-    <!--            <button type="button" class="btn btn-secondary" style="background-color: dodgerblue; color: white"><a style="background-color: dodgerblue; background-image: none; color: white" class="" id="contact-tab2" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Toppings</a></button>-->
-    <!--        </div>-->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Order Online<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Menu</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="search stores nearby" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
         </div>
-        <div class="tab-pane fade" id="cheese" role="tabpanel" aria-labelledby="profile-tab">
-            <div class="card" >
-                <div class="card">
-                    <div class="card-header" style="background-color: dodgerblue; color: white">
-                        Choose Sauce and Cheese
-                    </div>
-                    <div class="card-body">
+    </nav>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid">
+            <h1 class="display-4">Welcome to Pizza World</h1>
+        </div>
+    </div>
+    <form action="https://enfvy5ct2pnle.x.pipedream.net" method="post">
+        <div class="container" style="padding-left: 10%; padding-right: 10%">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#crust" role="tab" aria-controls="home" aria-selected="true"><span class="badge badge-secondary" style="background-color: silver; border-radius: 30px">1 </span> Crust</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#cheese" role="tab" aria-controls="profile" aria-selected="false"><span class="badge badge-secondary" style="background-color: silver; border-radius: 30px">2 </span>Sauce and Cheese</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#toppings" role="tab" aria-controls="contact" aria-selected="false"><span class="badge badge-secondary" style="background-color: silver; border-radius: 30px">3 </span>Toppings</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="crust" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="card" >
                         <div class="card">
-                            <div class="card-header">
-                                Cheese
+                            <div class="card-header" style="background-color: dodgerblue; color: white">
+                                Choose Size and Crust
                             </div>
                             <div class="card-body">
-                                <div class="form-group">
-                                    <label for="exampleFormControlSelect3">How much?</label>
-                                    <select class="form-control" id="exampleFormControlSelect3">
-                                        <option>Light</option>
-                                        <option selected>Regular</option>
-                                        <option>Extra</option>
-                                        <option>Degenerate</option>
-                                    </select>
+                                <div class="card">
+                                    <div class="card-header" style="color: gray">
+                                        Hand-Tossed
+                                    </div>
+                                    <div class="card-body">
+                                            <div class="form-check">
+                                                <input class="form-check-input" name="crust" type="radio" checked value="handtoss-small" id="defaultCheck1">
+                                                <label class="form-check-label" for="defaultCheck1">
+                                                    Small 10"
+                                                </label>
+                                                <br>
+                                                <input class="form-check-input" name="crust" type="radio" checked value="handtoss-med" id="defaultCheck2">
+                                                <label class="form-check-label" for="defaultCheck2">
+                                                    Medium 12"
+                                                </label>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" style="color: gray">
+                                        Thin
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-radio">
+                                            <input class="form-radio-input" name="crust" type="radio" value="thin-med" id="defaultCheck3">
+                                            <label class="form-radio-label" for="defaultCheck3">
+                                                Medium 12"
+                                            </label>
+                                            <br>
+                                            <input class="form-radio-input" name="crust" type="radio" value="thin-lrg" id="defaultCheck4">
+                                            <label class="form-radio-label" for="defaultCheck4">
+                                                Large 14"
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="btn-group go-right" role="group" aria-label="Basic example" style="background-color: dodgerblue; color: white">
+                        <button type="button" class="btn btn-secondary" style="background-color: dodgerblue; color: white"><a style="background-color: dodgerblue; background-image: none; color: white" class="" id="button5" data-toggle="tab" href="#cheese" role="tab" aria-controls="profile" aria-selected="false">Next</a></button>
+                    </div>
+            <!--        <div class="btn-group" role="group" aria-label="Basic example" style="background-color: dodgerblue; color: white">-->
+            <!--            <button type="button" class="btn btn-secondary" style="background-color: dodgerblue; color: white"><a style="background-color: dodgerblue; background-image: none; color: white" class="active" id="home-button" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Crust</a></button>-->
+            <!--            <button type="button" class="btn btn-secondary" style="background-color: dodgerblue; color: white"><a style="background-color: dodgerblue; background-image: none; color: white" class="" id="button2" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Sauce and Cheese</a></button>-->
+            <!--            <button type="button" class="btn btn-secondary" style="background-color: dodgerblue; color: white"><a style="background-color: dodgerblue; background-image: none; color: white" class="" id="contact-tab2" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Toppings</a></button>-->
+            <!--        </div>-->
+                </div>
+                <div class="tab-pane fade" id="cheese" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="card" >
                         <div class="card">
-                            <div class="card-header">
-                                Sauce
+                            <div class="card-header" style="background-color: dodgerblue; color: white">
+                                Choose Sauce and Cheese
                             </div>
-                            <div class="card-header" style="color: gray">
-                                <div class="form-group">
-                                    <label for="exampleFormControlSelect2">What kind?</label>
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                        <option selected>Tomato</option>
-                                        <option>The Weird White Kind</option>
-                                    </select>
+                            <div class="card-body">
+                                <div class="card">
+                                    <div class="card-header">
+                                        Cheese
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="exampleFormControlSelect3">How much?</label>
+                                            <select class="form-control" id="exampleFormControlSelect3">
+                                                <option value="light">Light</option>
+                                                <option value="reg" selected>Regular</option>
+                                                <option value="ex">Extra</option>
+                                                <option value="degenerate">Degenerate</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        Sauce
+                                    </div>
+                                    <div class="card-header" style="color: gray">
+                                        <div class="form-group">
+                                            <label for="exampleFormControlSelect2">What kind?</label>
+                                            <select class="form-control" id="exampleFormControlSelect1">
+                                                <option value="tomato" selected>Tomato</option>
+                                                <option value="weird">The Weird White Kind</option>
+                                            </select>
 
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlSelect1">How much?</label>
+                                            <select class="form-control" id="exampleFormControlSelect2">
+                                                <option value="light">Light</option>
+                                                <option value="reg" selected>Regular</option>
+                                                <option value="ex">Extra</option>
+                                                <option value="degenerate">Degenerate</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-group go-right" role="group" aria-label="Basic example" style="background-color: dodgerblue; color: white">
+                        <button type="button" class="btn btn-secondary" style="background-color: dodgerblue; color: white"><a style="background-color: dodgerblue; background-image: none; color: white" class="active" id="home-button3" data-toggle="tab" href="#crust" role="tab" aria-controls="home" aria-selected="true"> << Previous</a></button>
+                        <button type="button" class="btn btn-secondary" style="background-color: dodgerblue; color: white"><a style="background-color: dodgerblue; background-image: none; color: white" class="nav-link" id="contact-tab2" data-toggle="tab" href="#toppings" role="tab" aria-controls="contact" aria-selected="false">Next >> </a></button>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="toppings" role="tabpanel" aria-labelledby="contact-tab">
+                    <div class="card" >
+                        <div class="card">
+                            <div class="card-header" style="background-color: dodgerblue; color: white">
+                                Choose Toppings
+                            </div>
+                            <div class="card-body">
+                                <div class="card">
+                                    <div class="card-header">
+                                        Choose Meats
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <div class="custom-control custom-checkbox">
+                                                <input value="beef" type="checkbox" class="custom-control-input" id="customCheck1">
+                                                <label class="custom-control-label" for="customCheck1">Beef</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input value="ham" type="checkbox" class="custom-control-input" id="customCheck2">
+                                                <label class="custom-control-label" for="customCheck2">Ham</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input value="steak" type="checkbox" class="custom-control-input" id="customCheck3">
+                                                <label class="custom-control-label" for="customCheck3">Philly Steak</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input value="bacon" type="checkbox" class="custom-control-input" id="customCheck4">
+                                                <label class="custom-control-label" for="customCheck4">Bacon</label>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <br>
-                                <div class="form-group">
-                                    <label for="exampleFormControlSelect1">How much?</label>
-                                    <select class="form-control" id="exampleFormControlSelect2">
-                                        <option>Light</option>
-                                        <option selected>Regular</option>
-                                        <option>Extra</option>
-                                        <option>Degenerate</option>
-                                    </select>
+                                <div class="card">
+                                    <div class="card-header">
+                                        Choose Non-Meats
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="custom-control custom-checkbox">
+                                            <input value="grn-pep" type="checkbox" class="custom-control-input" id="customCheck5">
+                                            <label class="custom-control-label" for="customCheck5">Green Peppers</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox">
+                                            <input value="mushroom" type="checkbox" class="custom-control-input" id="customCheck6">
+                                            <label class="custom-control-label" for="customCheck6">Mushrooms</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox">
+                                            <input value="onion" type="checkbox" class="custom-control-input" id="customCheck7">
+                                            <label class="custom-control-label" for="customCheck7">Onions</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox">
+                                            <input value="jalepenos" type="checkbox" class="custom-control-input" id="customCheck8">
+                                            <label class="custom-control-label" for="customCheck8">Jalepenos</label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="btn-group go-right" role="group" aria-label="Basic example" style="background-color: dodgerblue; color: white">
+                        <button type="submit" class="btn btn-secondary" style="background-color: dodgerblue; color: white"><a style="background-color: dodgerblue; background-image: none; color: white; text-decoration: none">Checkout</a></button>
                     </div>
                 </div>
             </div>
-            <div class="btn-group go-right" role="group" aria-label="Basic example" style="background-color: dodgerblue; color: white">
-                <button type="button" class="btn btn-secondary" style="background-color: dodgerblue; color: white"><a style="background-color: dodgerblue; background-image: none; color: white" class="active" id="home-button3" data-toggle="tab" href="#crust" role="tab" aria-controls="home" aria-selected="true"> << Previous</a></button>
-                <button type="button" class="btn btn-secondary" style="background-color: dodgerblue; color: white"><a style="background-color: dodgerblue; background-image: none; color: white" class="nav-link" id="contact-tab2" data-toggle="tab" href="#toppings" role="tab" aria-controls="contact" aria-selected="false">Next >> </a></button>
-            </div>
         </div>
-        <div class="tab-pane fade" id="toppings" role="tabpanel" aria-labelledby="contact-tab">
-            <div class="card" >
-                <div class="card">
-                    <div class="card-header" style="background-color: dodgerblue; color: white">
-                        Choose Toppings
-                    </div>
-                    <div class="card-body">
-                        <div class="card">
-                            <div class="card-header">
-                                Choose Meats
-                            </div>
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                        <label class="custom-control-label" for="customCheck1">Beef</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck2">
-                                        <label class="custom-control-label" for="customCheck2">Ham</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck3">
-                                        <label class="custom-control-label" for="customCheck3">Philly Steak</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck4">
-                                        <label class="custom-control-label" for="customCheck4">Bacon</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="card">
-                            <div class="card-header">
-                                Choose Non-Meats
-                            </div>
-                            <div class="card-body">
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck5">
-                                    <label class="custom-control-label" for="customCheck5">Green Peppers</label>
-                                </div>
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck6">
-                                    <label class="custom-control-label" for="customCheck6">Mushrooms</label>
-                                </div>
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck7">
-                                    <label class="custom-control-label" for="customCheck7">Onions</label>
-                                </div>
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck8">
-                                    <label class="custom-control-label" for="customCheck8">Jalepenos</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="btn-group go-right" role="group" aria-label="Basic example" style="background-color: dodgerblue; color: white">
-                <button type="button" class="btn btn-secondary" style="background-color: dodgerblue; color: white"><a style="background-color: dodgerblue; background-image: none; color: white; text-decoration: none">Checkout</a></button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 </body>
 </html>
