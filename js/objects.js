@@ -28,6 +28,9 @@
 
     console.log("Hello, " + names.first + " " + names.last + ".");
 
+    console.log(" ");
+    console.log(" ");
+
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
      * more than $200. If a shopper spends more than $200, they get a 12%
@@ -119,10 +122,12 @@
      */
 
     function displayThrough(n) {
+        console.log(" ");
         for (var i = 0; i < n.length; i++) {
+            console.log(" ");
             console.log("Book # " + (i + 1));
             showBookInfo(n[i]);
-            console.log("=====(separator)=====");
+            console.log(" ");
         }
         return "console";
     }
