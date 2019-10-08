@@ -1,6 +1,5 @@
 (function() {
     "use strict";
-
     /**
      * TODO:
      * Create an object with firstName and lastName properties that are strings
@@ -86,49 +85,13 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-    var books = [
-        {
-            title: "Fellowship of the Ring",
-            author: {
-                first: "JRR",
-                last: "Tolkien"
-            }
-        },
-        {
-            title: "The Art of War",
-            author: {
-                first: "Sun",
-                last: "Tzu"
-            }
-        },
-        {
-            title: "IT",
-            author: {
-                first: "Stephen",
-                last: "King"
-            }
-        },
-        {
-            title: "The Art of War",
-            author: {
-                first: "",
-                last: ""
-            }
-        },
-        {
-            title: "The Art of War",
-            author: {
-                first: "",
-                last: ""
-            }
-        },
-        {
-            title: "The Art of War",
-            author: {
-                first: "",
-                last: ""
-            }
-        },
+    var books = [];
+    createBook("Fellowship of the Ring", "JRR Tolkien");
+    createBook("Art of War", "Sun Tzu");
+    createBook("IT", "Stephen King");
+    createBook("The Lucifer Effect", "Philip Zimbardo");
+    createBook("The Conspiracy Against The Human Race", "Thomas Ligotti");
+    displayThrough(books); //loops through and console logs the books
 
     /**
      * TODO:
@@ -155,7 +118,14 @@
      *      ...
      */
 
-
+    function displayThrough(n) {
+        for (var i = 0; i < n.length; i++) {
+            console.log("Book # " + (i + 1));
+            showBookInfo(n[i]);
+            console.log("=====(separator)=====");
+        }
+        return "console";
+    }
 
     /**
      * Bonus:
@@ -167,5 +137,22 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+    function createBook(title, author) {
+        var authorArray = author.split(" ");
+        var temp = {
+            title: title,
+            author: {
+                first: authorArray[0],
+                last: authorArray[1]
+            }
+        };
+        books.push(temp);
+        return temp;
+    }
+    function showBookInfo(n) {
+        console.log("Title of book: " + n.title);
+        console.log("Author of book: " + n.author.first + " " + n.author.last);
+    }
 
 })();
