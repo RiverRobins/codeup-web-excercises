@@ -73,19 +73,32 @@
         // console.log(returnType("one"));
         // console.log(returnType(true));
 
-        function returnPosEven(n) {
-            // if (n > 0 && (n % 2 === 0)) {
-            //     return true;
-            // }
-            // else {
-            //     return false;
-            // }
-            return (n > 0 && n % 2 ===0);
+        // function returnPosEven(n) {
+        //     // if (n > 0 && (n % 2 === 0)) {
+        //     //     return true;
+        //     // }
+        //     // else {
+        //     //     return false;
+        //     // }
+        //     return (n > 0 && n % 2 ===0);
+        // }
+        // console.log(returnPosEven(88));
+        // console.log(returnPosEven(0));
+        // console.log(returnPosEven(-5));
+        // console.log(returnPosEven(5));
+
+        function promptForNum() {
+
+            var n = parseInt(prompt("enter number: "));
+            if (n > 5) {
+                alert("number is greater than 5");
+            }
+            else {
+                alert("number is less than or equal to than 5")
+            }
         }
-        console.log(returnPosEven(88));
-        console.log(returnPosEven(0));
-        console.log(returnPosEven(-5));
-        console.log(returnPosEven(5));
+
+        promptForNum();
         
     </script>
 </body>
