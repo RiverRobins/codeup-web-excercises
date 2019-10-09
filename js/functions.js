@@ -19,7 +19,8 @@ function sayHello(name) {
  *
  * console.log 'helloMessage' to check your work
  */
-console.log(sayHello("River"));
+var helloMessage = sayHello("River");
+console.log(helloMessage);
 
 /**
  * TODO:
@@ -61,6 +62,7 @@ function isTwo(n) {
         return false;
     }
 }
+console.log(isTwo(random));
 
 /**
  * TODO:
@@ -77,6 +79,7 @@ function isTwo(n) {
 function calculateTip(per, tot) {
     return (tot * per);
 }
+console.log(calculateTip(0.25, 24));
 
 /**
  * TODO:
@@ -85,7 +88,7 @@ function calculateTip(per, tot) {
  * then display the dollar amount they should tip
  */
 
-alert(calculateTip(prompt("What is the tip percentage? "), prompt("What is the total price?")));
+alert("You should tip $" + calculateTip(prompt("What is the tip percentage? "), prompt("What is the total price?")));
 
 /**
  * TODO:
