@@ -190,7 +190,7 @@ confirmAge(confirm("confirm you are 13+ years old"));
 
 // =============== IF / ELSE IF/ELSE STATEMENT EXAMPLES ================
 //Together: Write an if/else if/else statement that alerts "It's snowing!" if weather is equal to "snowing", alerts "It's raining" if weather is equal to "raining", alerts "have a nice day" for all other cases
-weather = raining;
+weather = "raining";
 
 function checkWeather2(n) {
     if (n === "snowing") {
@@ -289,8 +289,8 @@ console.log(permitLoicense(15));
 
 //TODO: Refactor the following conditional as a ternary
 
-// var weather = "sunny";
-// var weatherMessage;
+var weather = "sunny";
+var weatherMessage;
 
 // if(weather === "rainy"){
 //    weatherMessage = "It's raining!";
@@ -300,7 +300,8 @@ console.log(permitLoicense(15));
 
 //WRITE YOUR TERNARY STATEMENT HERE!
 
-
+weatherMessage = weather === "rainy" ? "Its raining" : "Have a nice day";
+console.log(weatherMessage);
 
 // =============== SWITCH STATEMENT ================
 //Together:
@@ -322,10 +323,38 @@ console.log(permitLoicense(15));
 
 //TODO: Write a switch statement that evaluates weather as the condition. Check for "rainy", "sunny", "snow", and a default case.
 
+weather = prompt("enter weather(sunny, rainy, or snow):");
+
+switch (weather) {
+    case "snow":
+        console.log("bold of you to assume it snows here");
+        break;
+    case "sunny":
+        console.log("yup, were in texas. its sunny");
+        break;
+    case "rainy":
+        console.log("hecc it be raining");
+        break;
+    default:
+        console.log("Im just as clueless as you");
+}
 
 //TODO: Rewrite the intersection function from earlier as a switch statement.
 
-
+switch (traficLight) {
+    case "red": {
+        console.log("Stop(in front of cops)");
+        break;
+    }
+    case "green": {
+        console.log("G O");
+        break;
+    }
+    case "yellow": {
+        console.log("SPEED");
+        break;
+    }
+}
 
 // ================ REVERSE ENGINEERING =================
 // Visit each of these links, outline the steps required to achieve each of these demonstrations. You can write code or just write the logic steps that would achieve each output
@@ -333,9 +362,26 @@ console.log(permitLoicense(15));
 
 // 1) https://mdn.github.io/learning-area/javascript/building-blocks/allowance-updater.html
 
+var allowance = 5, doneShopping = true;
+if (doneShopping === true) {
+    allowance += 5;
+}
 
 // 2) https://mdn.github.io/learning-area/javascript/building-blocks/simple-else-if.html
 
+if (weather === "snow") {
+    console.log("its snowing");
+}
+else if (weather === "rain") {
+    console.log("its raining");
+}
+else  if (weather === "sun") {
+    console.log("it be sunny");
+}
+else {
+    console.log("overcast");
+}
 
 // 3) https://mdn.github.io/learning-area/javascript/building-blocks/simple-ternary.html
 
+var theme = themeInput === black ? setTheme(dark) : setTheme(light);
