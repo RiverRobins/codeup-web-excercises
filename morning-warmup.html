@@ -87,18 +87,31 @@
         // console.log(returnPosEven(-5));
         // console.log(returnPosEven(5));
 
-        function promptForNum() {
+        // function promptForNum() {
+        //
+        //     var n = parseInt(prompt("enter number: "));
+        //     if (n > 5) {
+        //         alert("number is greater than 5");
+        //     }
+        //     else {
+        //         alert("number is less than or equal to than 5")
+        //     }
+        // }
+        // promptForNum();
 
-            var n = parseInt(prompt("enter number: "));
-            if (n > 5) {
-                alert("number is greater than 5");
+        function alertStranger(n = "stranger") {
+            if (n === "Kenobi") {
+                alert("Hello there.");
+                alert("General Kenobi.");
+                return n;
             }
             else {
-                alert("number is less than or equal to than 5")
+                alert("Hello there, " + n + ".");
+                return n;
             }
         }
 
-        promptForNum();
+        alertStranger(prompt("Enter name: "));
         
     </script>
 </body>
