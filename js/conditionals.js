@@ -18,21 +18,23 @@
 
 if (confirm("Press OK if you would like to enter a number") === true) {
     var n = parseInt(prompt("Enter a number:"));
-    if (n % 2 === 0) {
-        alert("Number is even");
-    }
-    else  {
-        alert("Number is odd");
-    }
-    alert("Number " + n + (" plus 100 is ") + (n + 100));
-    if (n > 0) {
-        alert("Number is positive");
-    }
-    else if (n === 0) {
-        alert("Number is zero");
-    }
-    else {
-        alert("Number is negative");
+    if (n != NaN) {
+        if (n % 2 === 0) {
+            alert("Number is even");
+        }
+        else  {
+            alert("Number is odd");
+        }
+        alert("Number " + n + (" plus 100 is ") + (n + 100));
+        if (n > 0) {
+            alert("Number is positive");
+        }
+        else if (n === 0) {
+            alert("Number is zero");
+        }
+        else {
+            alert("Number is negative");
+        }
     }
 }
 
@@ -182,11 +184,11 @@ function calculateTotal(lucky, tot) {
             break;
         }
         case 3: {
-            discount = 0.1;
+            discount = 0.35;
             break;
         }
         case 4: {
-            discount += 0.15;
+            discount += 0.5;
             break;
         }
         case 5: {

@@ -122,7 +122,7 @@ function checkIfGameIsOver(n) {
 console.log(checkIfGameIsOver(numberOfLives));
 
 //TODO: Write an if statement that alerts "It's snowing!" if weather is equal to "snowing", else alert "Check back later for more details!"
-function isSnowing() {
+function isSnowingv2() {
     if (weather === "snowing") {
         return "it's snowing";
     }
@@ -130,10 +130,10 @@ function isSnowing() {
         return "check back later for more details";
     }
 }
-console.log(isSnowing(weather));
+console.log(isSnowingv2(weather));
 
 //TODO: Write an if statement that alerts true if numberInput is greater than 10, else alert "the number is less than 10"
-function numGreaterThan10(n) {
+function numGreaterThan10v2(n) {
     if (n > 10) {
         alert("true");
     }
@@ -142,7 +142,7 @@ function numGreaterThan10(n) {
     }
 }
 
-console.log(numGreaterThan10(numberInput));
+console.log(numGreaterThan10v2(numberInput));
 
 //TODO: Refactor todo#1 as a function named checkIfGameIsOver, that accepts numberOfLives and returns "Sorry, game over" if numberOfLives is 0, else return "Next Level!. 
 //done
