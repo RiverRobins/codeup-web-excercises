@@ -289,7 +289,7 @@ console.log(permitLoicense(15));
 
 //TODO: Refactor the following conditional as a ternary
 
-var weather = "sunny";
+weather = "sunny";
 var weatherMessage;
 
 // if(weather === "rainy"){
