@@ -99,19 +99,25 @@
         // }
         // promptForNum();
 
-        function alertStranger(n = "stranger") {
-            if (n === "Kenobi") {
-                alert("Hello there.");
-                alert("General Kenobi.");
-                return n;
-            }
-            else {
-                alert("Hello there, " + n + ".");
-                return n;
-            }
-        }
-        alertStranger(prompt("Enter name: "));
+        // function alertStranger(n = "stranger") {
+        //     if (n === "Kenobi") {
+        //         alert("Hello there.");
+        //         alert("General Kenobi.");
+        //         return n;
+        //     }
+        //     else {
+        //         alert("Hello there, " + n + ".");
+        //         return n;
+        //     }
+        // }
+        // alertStranger(prompt("Enter name: "));
 
+        function returnLen(n) {
+            return n.length;
+        }
+        console.log(returnLen([1, 2]));
+        console.log(returnLen([2, 4, 2, 2, 2]));
+        console.log(returnLen([2, 4, 2, 2, 2, 4, 32, 24, 24]));
 
     </script>
 </body>
