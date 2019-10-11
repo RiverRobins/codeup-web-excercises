@@ -51,8 +51,14 @@ div.banner {
     flex-direction: row;
     align-items: center;
 }
-div.banner > div{
+div.banner div {
     width: 100%;
+    background-color: #111111;
+    opacity: 20%;
+}
+div.banner div p {
+    opacity: 0;
+    color: white;
 }
 @media screen and (min-width:900px) {
 

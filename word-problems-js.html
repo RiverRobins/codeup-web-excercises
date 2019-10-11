@@ -16,7 +16,7 @@
         mon: "busy",
         tues: "free",
         wed: "free",
-        thurs: "free",
+        thurs: "busy",
         fri: "free"
     };
     function joinClub(daySelected, schedule) {
@@ -27,6 +27,10 @@
             return "Can NOT join";
         }
     }
+    console.log(joinClub("mon", heatherSchedule));
+    console.log(joinClub("tues", heatherSchedule));
+    console.log(joinClub("wed", heatherSchedule));
+    console.log(joinClub("thurs", heatherSchedule));
     console.log(joinClub("fri", heatherSchedule));
 
     divider();
