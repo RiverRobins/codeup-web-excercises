@@ -120,17 +120,17 @@
         // console.log(returnLen([2, 4, 2, 2, 2, 4, 32, 24, 24]));
 
         function quotient(n, m) {
-            if ((typeof n === "number") && (typeof m === "number")) {
-                return parseInt(n) + parseInt(m);
+            if (typeof n === "number" && typeof m === "number") {
+                return n / m;
             }
             else {
                 return false;
             }
         }
-        console.log(quotient("string", "string4"));
+        console.log(quotient("string", "string"));
         console.log(quotient(3, 10));
-        console.log(2, "no");
-        console.log("string2", 5);
+        console.log(quotient(4, "string"));
+        console.log(quotient("string", 5));
 
     </script>
 </body>
