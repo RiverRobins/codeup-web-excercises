@@ -6,6 +6,11 @@
 </head>
 <body>
 <script>
+    //ignore
+    function divider() {
+        console.log("\n \n Divider \n \n \n");
+    }
+
     //problem 1
     var heatherSchedule = {
         mon: "busy",
@@ -15,7 +20,7 @@
         fri: "free"
     };
     function joinClub(daySelected, schedule) {
-        if (schedule.[daySelected] === "free") {
+        if (schedule[daySelected] === "free") {
             return "Can join club";
         }
         else {
@@ -23,6 +28,8 @@
         }
     }
     console.log(joinClub("fri", heatherSchedule));
+
+    divider();
 
     //problem 2
     var prices = {
@@ -38,20 +45,54 @@
     console.log(getFood(5, 5, 5));
     //JavaScript is the least consistent language ever I swear
 
+    divider();
+
     //problem 3
     function metalHead(ounces) {
-        var profit = 0;
-        var ingots = 0;
-        var scrap = 0;
-        while (ounces - 42 >= 0) {
-            ingots++;
-            profit += 15;
+        var moneySpent = (ounces * 1.875);
+        var moneyMade = 0;
+        var scrap = ounces;
+        while ((scrap - 40) >= 0) {
+            scrap -= 40;
+            moneyMade += 3 * (40 * 1.875);
         }
-
+        moneyMade += scrap * 0.7;
+        return "Money spent: $" + moneySpent + "\n" + "Money made: $" + moneyMade + "\n" + "Total profit: $" + (moneyMade - moneySpent);
     }
+    console.log(metalHead(40));
+    console.log(metalHead(80));
+    console.log(metalHead(144));
+    console.log(metalHead(60));
+    console.log(metalHead(91));
 
+    divider();
 
-
+    //problem 4
+    function run() {
+        var speed = 10.75;
+        var hours = 0;
+        var toGo = 42;
+        //first hour
+        toGo -= 10.75;
+        hours += 1;
+        speed -= 0.5;
+        //rest of marathon
+        for (var i = 0; toGo > 0; i++) {
+            if (i % 3 === 0) {
+                if (speed - 0.5 > 1) {
+                    speed -= 0.5;
+                }
+                else if (speed - 0.5 < 1) {
+                    speed = 1;
+                }
+            }
+            toGo -= speed / 4;
+            hours += 0.25;
+        }
+        return "Time: " + hours + " hours";
+    }
+    console.log(run());
+    
 </script>
 </body>
 </html>
