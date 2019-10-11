@@ -15,16 +15,42 @@
         fri: "free"
     };
     function joinClub(daySelected, schedule) {
-        if (schedule[daySelected] === "free") {
+        if (schedule.[daySelected] === "free") {
             return "Can join club";
         }
         else {
-            return "Can NOT join"
+            return "Can NOT join";
         }
     }
-    console.log(joinClub("wed", heatherSchedule));
+    console.log(joinClub("fri", heatherSchedule));
 
     //problem 2
+    var prices = {
+        tofu: 3,
+        lamb: 5,
+        potato: 1
+    };
+    function getFood(tofu, lamb, potato) {
+        var foodTotal = (tofu * parseFloat(prices.tofu)) + (lamb * parseFloat(prices.lamb)) + (potato * parseFloat(prices.potato));
+        return "Total amount purchased: " + (tofu + lamb + potato) + "lbs" + "\n" + "Total price: $" + foodTotal + "\n" + "Discounted cost: $" + (foodTotal / 0.2);
+    }
+    console.log(getFood(10, 10, 10));
+    console.log(getFood(5, 5, 5));
+    //JavaScript is the least consistent language ever I swear
+
+    //problem 3
+    function metalHead(ounces) {
+        var profit = 0;
+        var ingots = 0;
+        var scrap = 0;
+        while (ounces - 42 >= 0) {
+            ingots++;
+            profit += 15;
+        }
+
+    }
+
+
 
 </script>
 </body>
