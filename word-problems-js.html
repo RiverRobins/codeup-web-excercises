@@ -21,10 +21,10 @@
     };
     function joinClub(daySelected, schedule) {
         if (schedule[daySelected] === "free") {
-            return "Can join club";
+            return "Can join club on " + daySelected;
         }
         else {
-            return "Can NOT join";
+            return "Can NOT join on " + daySelected;
         }
     }
     console.log(joinClub("mon", heatherSchedule));
