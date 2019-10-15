@@ -51,8 +51,23 @@ div.banner {
     flex-direction: row;
     align-items: center;
 }
-div.banner > div{
+div.banner div {
     width: 100%;
+    background-color: rgba(1, 1, 1, 0.5);
+    opacity: 20%;
+}
+div.banner p {
+    background: none;
+    opacity: unset;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+.meat {
+    background-color: gray;
+    /*padding: 15px;*/
+    border: 1px solid black;
+    box-shadow: 4px 4px 4px #555;
 }
 @media screen and (min-width:900px) {
 

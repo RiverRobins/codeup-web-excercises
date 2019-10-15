@@ -16,17 +16,21 @@
         mon: "busy",
         tues: "free",
         wed: "free",
-        thurs: "free",
+        thurs: "busy",
         fri: "free"
     };
     function joinClub(daySelected, schedule) {
         if (schedule[daySelected] === "free") {
-            return "Can join club";
+            return "Can join club on " + daySelected;
         }
         else {
-            return "Can NOT join";
+            return "Can NOT join on " + daySelected;
         }
     }
+    console.log(joinClub("mon", heatherSchedule));
+    console.log(joinClub("tues", heatherSchedule));
+    console.log(joinClub("wed", heatherSchedule));
+    console.log(joinClub("thurs", heatherSchedule));
     console.log(joinClub("fri", heatherSchedule));
 
     divider();
