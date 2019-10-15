@@ -13,7 +13,7 @@ var allCones = Math.floor(Math.random() * 50) + 50;
 // Math.floor(Math.random() * 5) + 1;
 
 do {
-    var sold = Math.floor(Math.random() * 5) + 1
+    var sold = Math.floor(Math.random() * 5) + 1;
     if (sold < allCones) {
         console.log("Sold: " + sold + " cones.");
         allCones -= sold;
