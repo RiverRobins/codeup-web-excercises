@@ -119,18 +119,27 @@
         // console.log(returnLen([2, 4, 2, 2, 2]));
         // console.log(returnLen([2, 4, 2, 2, 2, 4, 32, 24, 24]));
 
-        function quotient(n, m) {
-            if (typeof n === "number" && typeof m === "number") {
-                return n / m;
-            }
-            else {
-                return false;
+        // function quotient(n, m) {
+        //     if (typeof n === "number" && typeof m === "number") {
+        //         return n / m;
+        //     }
+        //     else {
+        //         return false;
+        //     }
+        // }
+        // console.log(quotient("string", "string"));
+        // console.log(quotient(3, 10));
+        // console.log(quotient(4, "string"));
+        // console.log(quotient("string", 5));
+
+        function logArrayEl(n) {
+            for (var i = 0; i < n.length; i++) {
+                console.log(n[i]);
             }
         }
-        console.log(quotient("string", "string"));
-        console.log(quotient(3, 10));
-        console.log(quotient(4, "string"));
-        console.log(quotient("string", 5));
+        logArrayEl([5, 4, 3, 2, 1]);
+        logArrayEl(["Five", "Four", "Three", "Two", "One"]);
+
 
     </script>
 </body>
