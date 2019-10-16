@@ -1,6 +1,6 @@
 var skip = 0;
 
-while (skip % 2 === 0 || skip < 0) {
+while (skip % 2 === 0 || skip <= 0) {
     skip = parseInt(prompt("Enter an odd number"));
 }
 
@@ -11,4 +11,8 @@ for (var i = 1; i < 50; ++i, ++i) {
     else {
         console.log(i);
     }
+}
+
+while (true) {
+
 }
