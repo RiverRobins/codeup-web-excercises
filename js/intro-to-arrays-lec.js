@@ -123,6 +123,13 @@ printAll(daysOfTheWeek);
 printAll(favoriteFoods);
 // TODO: Refactoring the instructor loop, alert "hey, I know <INSTRUCTOR NAME HERE>" if you have had class with that instructor. If you have not had class with that instructor, alert "I haven't had class with <INSTRUCTOR NAME HERE> yet!"
 for (var i = 0; i < instructors.length; i++) {
+    var had = ["vivian", "sophie", "david", "justin"];
+    if (had.includes(instructors[i])) {
+        alert("Hey, I know " + instructors[i]);
+    }
+    else {
+        alert("I have not had " + instructors[i]);
+    }
     console.log(instructors[i]);
 }
 
@@ -139,7 +146,7 @@ function printItem(n) {
 shapes.forEach(printItem);
 
 // TODO TOGETHER: Using a for each loop, console.log each element from the following array:
-var pies = ["apple", "cherry", "key lime", "huckleberry"];
+pies = ["apple", "cherry", "key lime", "huckleberry"];
 pies.forEach(printItem);
 // TODO: Using a for each loop, iterate through the instructors array and console.log each instructor
 // TODO: Using a for each loop, iterate through the daysOfTheWeek array and console.log each day of the week
