@@ -1,7 +1,7 @@
 "use strict";
 
 for (var i = 1, n = prompt("Enter number to see multiplications:"); i < 11; i++) {
-    console.log(n * i);
+    console.log(n.toString() + " " + "x" + " " + i.toString() + " "  + "=" + " " + n * i);
 }
 
 for (var i = 0, n = 0; i < 10; i++) {
@@ -22,6 +22,14 @@ for (var i = 1; i < 10; i++) {
     }
     console.log(temp);
 }
+
+// for (var i = 1, len = i; i < 10; i++, len++) {
+//     var temp = 1;
+//     if (i !== 1) {
+//         temp = (len * (i * 10)) + i;
+//     }
+//     console.log(temp);
+// }
 
 for (var i = 100; i > 0; i = i - 5) {
     console.log(i);
