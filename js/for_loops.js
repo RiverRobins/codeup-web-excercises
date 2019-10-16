@@ -15,16 +15,14 @@ for (var i = 0, n = 0; i < 10; i++) {
 }
 
 for (var i = 1; i < 10; i++) {
-    var length = 0;
     var number = i.toString();
     var temp = "";
-    while (length < i) {
+    for (var length = 0; length < i; length++) {
         temp = temp + number;
-        length++;
     }
     console.log(temp);
 }
 
-for (i = 100; i > 0; i = i - 5) {
+for (var i = 100; i > 0; i = i - 5) {
     console.log(i);
 }
