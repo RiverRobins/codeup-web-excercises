@@ -17,6 +17,7 @@
 
     // TODO: This function needs to be called once every second
     function updateTimer() {
+        prev-exercises
         setTimeout( function () {
             if (detonationTimer === 0) {
                 alert('EXTERMINATE!');
@@ -29,16 +30,13 @@
     }
     while (detonationTimer > 0) {
         updateTimer();
+        console.log("updated timer to " + detonationTimer);
     }
 
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
     function defuseTheBOM() {
-
-    }
-
-    for (var i = 0; 1 < 5; i++) {
-        updateTimer();
+        clearTimeout();
     }
 
     // Don't modify anything below this line!
