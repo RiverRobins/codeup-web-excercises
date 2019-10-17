@@ -139,10 +139,20 @@
         // }
         // logArrayEl([5, 4, 3, 2, 1]);
         // logArrayEl(["Five", "Four", "Three", "Two", "One"]);
-        
-        function f() {
-            
+
+        function eightLong(n) {
+            if (n.length >= 8  && typeof n === "string") {
+                return true;
+            }
+            else {
+                return false;
+            }
         }
+        console.log(eightLong(888888888));
+        console.log(eightLong("thing"));
+        console.log(eightLong("definitely eight+ long"));
+        console.log(eightLong(false));
+        console.log(eightLong([1, 2, 3, 4, 5, 6, 7, 8, 9]));
 
     </script>
 </body>
