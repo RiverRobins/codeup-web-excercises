@@ -23,6 +23,7 @@ for (var i = 1; i < 10; i++) {
     console.log(temp);
 }
 
+<<<<<<< HEAD
 // for (var i = 1, len = i; i < 10; i++, len++) {
 //     var temp = 1;
 //     if (i !== 1) {
@@ -31,6 +32,8 @@ for (var i = 1; i < 10; i++) {
 //     console.log(temp);
 // }
 
+=======
+>>>>>>> fbfd2d14dae3ce400fc426d313a8c7fec909364f
 for (var i = 100; i > 0; i = i - 5) {
     console.log(i);
 }

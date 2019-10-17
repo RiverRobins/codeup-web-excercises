@@ -8,5 +8,11 @@
     <script src="js/while.js"></script>
     <script src="js/for_loops.js"></script>
     <script src="js/break_and_continue.js"></script>
+    <script>
+        console.log("FIZZBUZZ START:");
+        for(var i=100;i>0;i--){console.log(i%3===0||i%5===0?(i%5===0&&i%3===0?"FizzBuzz":(i%3===0?"Fizz":"Buzz")):i);}
+        console.log("FIZZBUZZ II START:");
+        for(var i=0;i<100;)console.log((++i%3?"":"Fizz")+(i%5?"":"Buzz")||i);
+    </script>
 </body>
 </html>

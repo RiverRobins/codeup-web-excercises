@@ -7,6 +7,7 @@ while (skip % 2 === 0 || skip <= 0) {
 for (var i = 1; i < 50; ++i, ++i) {
     if (i === skip) {
         console.log("skipping " + skip + " because it's a bad number");
+        break;
     }
     else {
         console.log(i);

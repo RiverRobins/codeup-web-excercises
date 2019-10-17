@@ -26,6 +26,9 @@
         setTimeout( function () {}, 1000);
         detonationTimer--;
     }
+    while (detonationTimer > 0) {
+        updateTimer();
+    }
 
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
