@@ -17,13 +17,15 @@
 
     // TODO: This function needs to be called once every second
     function updateTimer() {
-        if (detonationTimer === 0) {
-            alert('EXTERMINATE!');
-            document.body.innerHTML = '';
-        } else if (detonationTimer > 0) {
-            document.getElementById('timer').innerHTML = detonationTimer;
-        }
-        setTimeout( function () {}, 5000);
+        prev-exercises
+        setTimeout( function () {
+            if (detonationTimer === 0) {
+                alert('EXTERMINATE!');
+                document.body.innerHTML = '';
+            } else if (detonationTimer > 0) {
+                document.getElementById('timer').innerHTML = detonationTimer;
+            }
+        }, 1000);
         detonationTimer--;
     }
     while (detonationTimer > 0) {
