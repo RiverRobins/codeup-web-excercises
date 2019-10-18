@@ -164,6 +164,12 @@
      * the properties we created earlier.
      */
 
+    myMac.currentUser = function () {
+        console.log(this.login);
+    };
+
+    myMac.currentUser();
+
 
     /*********************************************
      *                  NESTED VALUES
@@ -188,11 +194,27 @@
      * Object element and pull the properties and methods that we need.
      */
 
-    var array = ["thing1", "thing2", "thing3"];
+    function sep() {
+        console.log("\n" + "========SEPARATOR========" + "\n" + "\n")
+    }
+    sep();
 
-    array.forEach(function (item, position) {
-        console.log("item: " + item + "\n" + "index: " + position);
-    });
+    // var array = ["thing1", "thing2", "thing3"];
+    // array.forEach(function (item, position) {
+    //     console.log("item: " + item + "\n" + "index: " + position);
+    // });
+
+    var someObject = {
+        name: "Object",
+        nestedArray: ["thingOne", "thingTwo", "ThingThree"],
+        printProperty: function (property) {
+            this[property].forEach(function (item) {
+                console.log(item);
+            });
+        }
+    };
+
+    someObject.printProperty("nestedArray");
 
 </script>
 </body>
