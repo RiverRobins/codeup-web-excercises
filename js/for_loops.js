@@ -22,7 +22,6 @@ for (var i = 1; i < 10; i++) {
     }
     console.log(temp);
 }
-
 // for (var i = 1, len = i; i < 10; i++, len++) {
 //     var temp = 1;
 //     if (i !== 1) {
@@ -30,7 +29,6 @@ for (var i = 1; i < 10; i++) {
 //     }
 //     console.log(temp);
 // }
-
 for (var i = 100; i > 0; i = i - 5) {
     console.log(i);
 }
