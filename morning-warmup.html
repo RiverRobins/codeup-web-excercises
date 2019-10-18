@@ -140,19 +140,34 @@
         // logArrayEl([5, 4, 3, 2, 1]);
         // logArrayEl(["Five", "Four", "Three", "Two", "One"]);
 
-        function eightLong(n) {
-            if (n.length >= 8  && typeof n === "string") {
-                return true;
+        // function eightLong(n) {
+        //     if (n.length >= 8  && typeof n === "string") {
+        //         return true;
+        //     }
+        //     else {
+        //         return false;
+        //     }
+        // }
+        // console.log(eightLong(888888888));
+        // console.log(eightLong("thing"));
+        // console.log(eightLong("definitely eight+ long"));
+        // console.log(eightLong(false));
+        // console.log(eightLong([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+
+        function roundFloat(n) {
+            if (typeof n === "number") {
+                return n.toFixed(0);
             }
             else {
                 return false;
             }
         }
-        console.log(eightLong(888888888));
-        console.log(eightLong("thing"));
-        console.log(eightLong("definitely eight+ long"));
-        console.log(eightLong(false));
-        console.log(eightLong([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+        console.log(roundFloat(1.23456789));
+        console.log(roundFloat(1.987));
+        console.log(roundFloat("string"));
+        console.log(roundFloat(true));
+        console.log(roundFloat(9));
+        console.log(roundFloat(2.5));
 
     </script>
 </body>
