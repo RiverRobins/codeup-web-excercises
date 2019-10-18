@@ -187,6 +187,13 @@
      * If we have an Array of Objects, we can iterate through it to access each
      * Object element and pull the properties and methods that we need.
      */
+
+    var array = ["thing1", "thing2", "thing3"];
+
+    array.forEach(function (item, position) {
+        console.log("item: " + item + "\n" + "index: " + position);
+    });
+
 </script>
 </body>
 </html>
