@@ -1141,7 +1141,10 @@
             }
         },
         getTotalNumberOfUnreadMessages: function () {
-            
+            var unreadArray = [];
+            for (var i = 0; i < profiles.length; i++) {
+                unreadArray.concat(profiles[i].greeting.split(" "))
+            }
         }
     };
 
