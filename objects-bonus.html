@@ -1091,7 +1091,57 @@
             return highest;
         },
         getMostFavoriteFruit: function () {
-
+            var apples = 0;
+            var strawberries = 0;
+            var bananas = 0;
+            for (var i = 0; i < profiles.length; i++) {
+                if (profiles[i].favoriteFruit === "apple") {
+                    apples++
+                }
+                else if (profiles[i].favoriteFruit === "banana") {
+                    bananas++
+                }
+                else {
+                    strawberries++
+                }
+            }
+            if (apples > strawberries && apples > bananas) {
+                return "Apple"
+            }
+            else if (strawberries > apples && strawberries > bananas) {
+                return "Strawberry"
+            }
+            else {
+                return "Banaan"
+            }
+        },
+        getLeastFavoriteFruit: function () {
+            var apples = 0;
+            var strawberries = 0;
+            var bananas = 0;
+            for (var i = 0; i < profiles.length; i++) {
+                if (profiles[i].favoriteFruit === "apple") {
+                    apples++
+                }
+                else if (profiles[i].favoriteFruit === "banana") {
+                    bananas++
+                }
+                else {
+                    strawberries++
+                }
+            }
+            if (apples < strawberries && apples < bananas) {
+                return "Apple"
+            }
+            else if (strawberries < apples && strawberries < bananas) {
+                return "Strawberry"
+            }
+            else {
+                return "Banaan"
+            }
+        },
+        getTotalNumberOfUnreadMessages: function () {
+            
         }
     };
 
