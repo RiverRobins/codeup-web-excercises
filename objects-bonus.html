@@ -1062,7 +1062,6 @@
                 temp = parseFloat(temp);
                 total += temp;
             }
-
             if (b === false) {
                 return (total.toFixed(2));
             }
@@ -1154,7 +1153,6 @@
             return total;
         },
         getAverageNumberOfUnreadMessages: function () {
-            var unreadArray = [];
             var total = this.getTotalNumberOfUnreadMessages();
             return (total / profiles.length);
         },
