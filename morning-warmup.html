@@ -154,20 +154,29 @@
         // console.log(eightLong(false));
         // console.log(eightLong([1, 2, 3, 4, 5, 6, 7, 8, 9]));
 
-        function roundFloat(n) {
-            if (typeof n === "number") {
-                return n.toFixed(0);
-            }
-            else {
-                return false;
+        // function roundFloat(n) {
+        //     if (typeof n === "number") {
+        //         return n.toFixed(0);
+        //     }
+        //     else {
+        //         return false;
+        //     }
+        // }
+        // console.log(roundFloat(1.23456789));
+        // console.log(roundFloat(1.987));
+        // console.log(roundFloat("string"));
+        // console.log(roundFloat(true));
+        // console.log(roundFloat(9));
+        // console.log(roundFloat(2.5));
+
+        function countTo(n) {
+            for (var i = 1; i <= n; i++) {
+                console.log(i);
             }
         }
-        console.log(roundFloat(1.23456789));
-        console.log(roundFloat(1.987));
-        console.log(roundFloat("string"));
-        console.log(roundFloat(true));
-        console.log(roundFloat(9));
-        console.log(roundFloat(2.5));
+        countTo(10);
+        countTo(24);
+        countTo(144);
 
     </script>
 </body>
