@@ -155,7 +155,7 @@
         getAverageSalesPerEmployee: function () {
             return this.getTotalNumberOfSales() / this.getEmployeeCount();
         }
-    }
+    };
 
     // Exercise 3. On the salesReport object you made, add the following methods.
     // getEmployeeCount() should return the total number of employees
@@ -1137,14 +1137,51 @@
                 return "Strawberry"
             }
             else {
-                return "Banaan"
+                return "Banana"
             }
         },
         getTotalNumberOfUnreadMessages: function () {
             var unreadArray = [];
+            var total = 0;
             for (var i = 0; i < profiles.length; i++) {
-                unreadArray.concat(profiles[i].greeting.split(" "))
+                var temp = (profiles[i].greeting.split(" "));
+                unreadArray.push(temp[temp.length - 3]);
             }
+            unreadArray.forEach(function (element) {
+                total += parseFloat(element);
+            });
+            return total;
+        },
+        getAverageNumberOfUnreadMessages: function () {
+            var unreadArray = [];
+            var total = this.getTotalNumberOfUnreadMessages();
+            return (total / profiles.length);
+        },
+        getAverageAge: function () {
+            var total = 0;
+            for (var i = 0; i < profiles.length; i++) {
+                total += profiles[i].age;
+            }
+            return (total / profiles.length);
+        },
+        getGenderCounts: function () {
+            var male = 0;
+            var female = 0;
+            for (var i = 0; i < profiles.length; i++) {
+                if (profiles[i].gender === "male") {
+                    male++
+                }
+                else {
+                    female++
+                }
+            }
+            return {
+                males: male,
+                females: female
+            };
+        },
+        getAllCompanyNames: function () {
+
         }
     };
 
