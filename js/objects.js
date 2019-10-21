@@ -149,7 +149,7 @@
             title: title,
             author: {
                 first: authorArray[0],
-                last: authorArray[1]
+                last: authorArray[authorArray.length - 1]
             }
         };
         books.push(temp);
