@@ -21,7 +21,7 @@
      **/
 
     var brString = planetsArray.join("<br>");
-    console.log(brString);
+    document.write(brString);
 
      /* BONUS:
      * Create another string that would display your planets in an undordered
@@ -42,6 +42,8 @@
          return temp.join(" ");
      }
 
-     console.log(makeUL(planetsArray2));
+     // console.log(makeUL(planetsArray2));
+
+     document.write(makeUL(planetsArray2));
 
 })();
