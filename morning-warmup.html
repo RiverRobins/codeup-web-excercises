@@ -169,14 +169,27 @@
         // console.log(roundFloat(9));
         // console.log(roundFloat(2.5));
 
-        function countTo(n) {
-            for (var i = 1; i <= n; i++) {
-                console.log(i);
-            }
+        // function countTo(n) {
+        //     for (var i = 1; i <= n; i++) {
+        //         console.log(i);
+        //     }
+        // }
+        // countTo(10);
+        // countTo(24);
+        // countTo(144);
+
+        function makePerson(n, m) {
+            var temp = {
+                name: n,
+                age: m
+            };
+            return temp
         }
-        countTo(10);
-        countTo(24);
-        countTo(144);
+        var arrayOfPeople = [];
+        arrayOfPeople.push(makePerson("Joe", 33));
+        arrayOfPeople.push(makePerson("Mahm-Ah", 36));
+        arrayOfPeople.push(makePerson("John", 24));
+        arrayOfPeople.push(makePerson("Boomer", 45));
 
     </script>
 </body>
