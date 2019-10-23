@@ -71,17 +71,16 @@ marker.setPopup(popup);
  *********************************************/
 // Geocoding Docs --> https://docs.mapbox.com/api/search/#geocoding
 
-
 // TODO TOGETHER: Using the Geocoder helper function, log the coordinates of Codeup and recenter the map to focus on Codeup. Comment out previous map code.
 
 // mapboxgl.accessToken = mapboxToken;
 //
 // // the  geocode method from mapbox-geocoder-utils.js
-// geocode("123 Main, Dallas, Texas", mapboxToken).then(function(result) {
-//     console.log(result);
-//     map.setCenter(result);
-//     marker.setLngLat(result);
-// });
+geocode("123 Main, Dallas, Texas", mapboxToken).then(function(result) {
+    console.log(result);
+    map.setCenter(result);
+    marker.setLngLat(result);
+});
 
 //TODO: Using the geocode method above, add a marker at Codeup to the map
 //TODO: Instead of setCenter try using map.jumpTo()
