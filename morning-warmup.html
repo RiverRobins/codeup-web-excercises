@@ -188,19 +188,58 @@
         // }
         // fizzbuzzOpt();
 
-        function FIVE(n) {
-            if (n.toUpperCase() === "FIVE") {
-                return 5;
+        // function FIVE(n) {
+        //     if (n.toUpperCase() === "FIVE") {
+        //         return 5;
+        //     }
+        // }
+        // var f = "five";
+        // console.log(FIVE("five"));
+        // console.log(FIVE("FiVe"));
+        // console.log(FIVE("FIVE"));
+        // console.log(FIVE("5"));
+        // console.log(FIVE("hello"));
+        // console.log(FIVE("no"));
+        // console.log(FIVE(f));
+
+        var shoppingCarts = [
+            {
+                apples: 8,
+                bananas: 2,
+                oranges: 4,
+                grapes: 24
+            }, {
+                apples: 3,
+                bananas: 6,
+                oranges: 12,
+                grapes: 12
+            } , {
+                apples: 0,
+                bananas: 12,
+                oranges: 0,
+                grapes: 0
+            } , {
+                apples: 4,
+                bananas: 0,
+                oranges: 8,
+                grapes: 10
             }
+        ];
+
+        function mostOf(item, array) {
+            var hi = array[0];
+            for (var i = 0; i < array.length; i++) {
+                if (array[i][item] > hi[item]) {
+                    hi = array[i];
+                }
+            }
+            return hi;
         }
-        var f = "five";
-        console.log(FIVE("five"));
-        console.log(FIVE("FiVe"));
-        console.log(FIVE("FIVE"));
-        console.log(FIVE("5"));
-        console.log(FIVE("hello"));
-        console.log(FIVE("no"));
-        console.log(FIVE(f));
+
+        console.log(mostOf("apples", shoppingCarts));
+        console.log(mostOf("bananas", shoppingCarts));
+        console.log(mostOf("oranges", shoppingCarts));
+        console.log(mostOf("grapes", shoppingCarts));
 
     </script>
 </body>

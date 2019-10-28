@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>thing</title>
+</head>
+<body>
+<script>
+    function fizzBuzz(n) {
+        for (var i = 1; i <= n; i++) {
+            var str = ""; //defines empty string to be returned if divisible by numbers
+            if (i % 3 === 0) {
+                str += "Fizz"; //concats Fizz to empty string if divisible by 3
+            }
+            if (i % 5 === 0) {
+                str += "Buzz"; //concats Buzz to empty string if divisible by 5, occurs after 3
+            }
+            console.log(str === "" ? i : str); //ternary returns loop iteration if
+        }
+    }
+    fizzBuzz(100);
+</script>
+</body>
+</html>
