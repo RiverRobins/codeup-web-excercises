@@ -18,6 +18,12 @@
         <p>Random paragraph</p>
         <h4>h4 tag here</h4>
         <p class="spooky">Yet another p tag</p>
+        <ul>
+            <li>List item</li>
+            <li>List item</li>
+            <li>List item</li>
+            <li>List item</li>
+        </ul>
     </div>
     <hr>
     <div class="section" id="s3">
@@ -27,9 +33,9 @@
     <div id="footer">
         <p class="spooky">This page was made without the use of anything other than HTML and JavaScript</p>
     </div>
-
-    <button id="buttonThing"></button>
-    <div id="box" style="height:50px;width:50px;background-color:red"></div>
+<!--    Jacob's button-->
+<!--    <button id="buttonThing"></button>-->
+<!--    <div id="box" style="height:50px;width:50px;background-color:red;position:relative"></div>-->
 
 <script src="js/jquery-2.2.4.js"></script>
     <script>
@@ -42,50 +48,63 @@
     // $(document).ready(function () {
     //     alert("DOM is done loading");
     // })
-    $.keyframe.define([{
-        name: "change-font",
-        "0%": {
-            "color": "black"
-        },
-        "50%": {
-            "color": "green"
-        },
-        "100%": {
-            "color": "black"
-        }
-    }]);
-    $.keyframe.define([{
-        name: "change-bg",
-        "0%": {
-            "background-color": "white"
-        },
-        "50%": {
-            "background-color": "blue"
-        },
-        "100%": {
-            "background-color": "white"
-        }
-    }]);
-    $(".section").css({"border": "1px solid black", "margin": "auto", "width": "15em", "display": "flex", "flex-direction": "column", "justify-content": "center", "align-items": "center", "box-shadow": "2px 2px 20px 5px black"});
-    $("h1").css({"background-color": "yellow", "color": "gray"});
-    $("h2").css({"background-color": "light-gray"});
-    $("#floor1").css({"color": "silver"});
-    $("#floor2").css({"color": "dark-gray"});
-    $("em").css({"font-style": "italic"}).playKeyframe({
-        name: "change-font",
-        duration: "3s",
-        iterationCount: "infinite"
-    });
-    $("#s2").playKeyframe({
-        name: "change-bg",
-        duration: "3s",
-        iterationCount: "infinite"
-    });
+    // $.keyframe.define([{
+    //     name: "change-font",
+    //     "0%": {
+    //         "color": "black"
+    //     },
+    //     "50%": {
+    //         "color": "green"
+    //     },
+    //     "100%": {
+    //         "color": "black"
+    //     }
+    // }]);
+    // $.keyframe.define([{
+    //     name: "change-bg",
+    //     "0%": {
+    //         "background-color": "white"
+    //     },
+    //     "50%": {
+    //         "background-color": "blue"
+    //     },
+    //     "100%": {
+    //         "background-color": "white"
+    //     }
+    // }]);
+    // $(".section").css({"border": "1px solid black", "margin": "auto", "width": "15em", "display": "flex", "flex-direction": "column", "justify-content": "center", "align-items": "center", "box-shadow": "2px 2px 20px 5px black"});
+    // $("h1").css({"background-color": "yellow", "color": "gray"});
+    // $("h2").css({"background-color": "light-gray"});
+    // $("#floor1").css({"color": "silver"});
+    // $("#floor2").css({"color": "dark-gray"});
+    // $("em").css({"font-style": "italic"}).playKeyframe({
+    //     name: "change-font",
+    //     duration: "3s",
+    //     iterationCount: "infinite"
+    // });
+    // $("#s2").playKeyframe({
+    //     name: "change-bg",
+    //     duration: "3s",
+    //     iterationCount: "infinite"
+    // });
 
-
-    $("#buttonThing").click(function(){
-        $("#box").animate({left: '250px'});
-    });
+    // Jacob's button js'
+    // $("#buttonThing").click(function(){
+    //     $("#box").animate({left: '250px'});
+    // });
+        $("h1").click(function () {
+            $("h1").css({"background-color": "black", "color": "white"})
+        });
+        $("p").dblclick(function () {
+            $("p").css("font-size", "18px")
+        });
+        $("li").mouseover(function () {
+            $("li").css("color", "red")
+        }).mouseleave(
+            function () {
+                $("li").css("color", "black")
+            }
+        );
     </script>
 </body>
 </html>
