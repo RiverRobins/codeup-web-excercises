@@ -3,12 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+<!--    <link rel="stylesheet" href="slick-1.8.1/slick/slick.css">-->
+<!--    <link rel="stylesheet" href="slick-1.8.1/slick/slick-theme.css">-->
+    <style>
+        @keyframes Konami {
+            0% {
+                color: #3B94D9;
+            }
+            10% {
+                color: #0fb784;
+            }
+            20% {
+                color: crimson;
+            }
+            30% {
+                color: yellow;
+            }
+            40% {
+                color: blueviolet;
+            }
+            50% {
+                color: orangered;
+            }
+            60% {
+                color: midnightblue;
+            }
+            70% {
+                color: salmon;
+            }
+            80% {
+                color: green;
+            }
+            90% {
+                color: darkorange;
+            }
+            100% {
+                color: #3B94D9;
+            }
+        }
+        .normal {
+            /*height: 400px;*/
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-direction: column;
+            border: 1px solid lightgray;
+        }
+        .bg {
+            display: none;
+            height: 300px;
+            width: 300px;
+        }
+    </style>
 </head>
 <body>
-<script src="js/jquery-2.2.4.js"></script>
-<script>
-    var code = ["ArrowUp", "ArrowUp"];
+    <div class="normal">
+        <h2>CONTRA</h2>
+        <div class="autoplay">
+            <img src="imgs/contrabackground.png" alt="broken contra gif" class="bg">
+        </div>
+    </div>
+    <audio src="galaga.mp3" style="display: none" id="galaga"></audio>
+    <script src="js/jquery-2.2.4.js"></script>
+<!--    <script src="slick-1.8.1/slick/slick.min.js"></script>-->
+    <script>
+    var code = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a", "Enter"];
+    var currPos= 0;
+    var galagaH = document.getElementById("galaga");
 
-</script>
+    $(document).keyup(function(event){
+        console.log(event.key);
+        if (event.key === code[currPos]) {
+            if (event.key === code[code.length -1]) {
+                currPos = 0;
+                galagaH.play();
+                $("img").css("display", "inline-block");
+                $("body").css("background-color", "black");
+                $("div").css({"animation": "Konami", "animation-duration": "30s", "animation-iteration-count": "infinite"})
+                // document.getElementsByTagName('div').style.animation = 'Konami 30s infinite';
+                // alert("IT WORKED");
+            }
+            else {
+                currPos++
+            }
+        }
+        else {
+            currPos = 0;
+        }
+    });
+    </script>
 </body>
 </html>
