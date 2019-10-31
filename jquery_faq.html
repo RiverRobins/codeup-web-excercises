@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>FAQ</title>
     <style>
-        #main {
+        .lesson {
             width: 80%;
             height: 800px;
             border: 1px solid black;
@@ -23,11 +23,21 @@
             background-color: lightgray;
             border-radius: 30px;
         }
+        #pics-con {
+            display: flex;
+            border: 1px solid black;
+            justify-content: space-evenly;
+        }
+        #butts {
+            display: flex;
+            border: 1px solid gray;
+            justify-content: space-evenly;
+        }
     </style>
 </head>
 <body>
 
-    <div id="main">
+    <div class="lesson">
         <button onclick="t();">Show fact about each park.</button>
         <dl>
             <dt>Mars Base</dt>
@@ -47,6 +57,48 @@
         </dl>
     </div>
 
+    <div class="lesson">
+        <button id="highlighter" onclick="highlight()">Highlight</button>
+        <div class="park">
+            <h3>Park1</h3>
+            <ul>
+                <li>fact 1</li>
+                <li>fact 2</li>
+                <li>fact 3</li>
+                <li>fact 4</li>
+            </ul>
+        </div>
+        <div class="park">
+            <h3>Park2</h3>
+            <ul>
+                <li>fact 1</li>
+                <li>fact 2</li>
+                <li>fact 3</li>
+                <li>fact 4</li>
+            </ul>
+        </div>
+        <div class="park">
+            <h3>Park3</h3>
+            <ul>
+                <li>fact 1</li>
+                <li>fact 2</li>
+                <li>fact 3</li>
+                <li>fact 4</li>
+            </ul>
+        </div>
+    </div>
+    <div class="lesson">
+        <div id="pics-con">
+            <img class="pic" src="" alt="ONE">
+            <img class="pic" src="" alt="TWO">
+            <img class="pic" src="" alt="THREE">
+        </div>
+        <div id="butts">
+            <button id="left">Left</button>
+            <button id="cent">Center</button>
+            <button id="right">Right</button>
+        </div>
+    </div>
 
     <script src="js/jquery-2.2.4.js"></script>
     <script>
@@ -58,6 +110,22 @@
         $("dt").click(function () {
             $(this).toggleClass("hi");
         });
+    </script>
+    <script>
+        function highlight() {
+            $("ul").each(function () {
+                $(this).children().last().css("background-color", "yellow");
+            })
+        }
+
+        $("h3").click(function(){
+            $(this).parent().children("ul").children("li").css({"font-weight": "bold"});
+        });
+
+        $("li").click(function () {
+            $(this).parent().children().first().css("color", "blue");
+        });
+
     </script>
 
 </body>
