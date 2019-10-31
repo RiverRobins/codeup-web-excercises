@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FAQ</title>
+    <style>
+        #main {
+            width: 80%;
+            height: 800px;
+            border: 1px solid black;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .invisible {
+            visibility: hidden;
+        }
+        .hi {
+            background-color: black;
+            color: white;
+            transition-duration: 1s;
+        }
+        button {
+            background-color: lightgray;
+            border-radius: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="main">
+        <button onclick="t();">Show fact about each park.</button>
+        <dl>
+            <dt>Mars Base</dt>
+            <dd>Will be a fun, outdoorsy atmosphere</dd>
+            <dt>Yala National Park</dt>
+            <dd>Endangered tarantula species live there</dd>
+            <dt>Central Park</dt>
+            <dd>Costed the US more money than all of Alaska</dd>
+            <dt>Carpathian National Park</dt>
+            <dd>Is one of the few places where wild cranberries grow readily</dd>
+            <dt>Tongariro National Park</dt>
+            <dd>Tourists can ski down an active volcano</dd>
+            <dt>Iguazu National Park</dt>
+            <dd>Is 259 square miles in size</dd>
+            <dt>Skeleton Coast National Park</dt>
+            <dd>247 uniqe species of bird have been recorded here</dd>
+        </dl>
+    </div>
+
+
+    <script src="js/jquery-2.2.4.js"></script>
+    <script>
+        $("dd").addClass("invisible");
+        // $("dt").addClass("");
+        function t() {
+            $("dd").toggleClass("invisible");
+        }
+        $("dt").click(function () {
+            $(this).toggleClass("hi");
+        });
+    </script>
+
+</body>
+</html>
