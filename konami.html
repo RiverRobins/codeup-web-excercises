@@ -92,6 +92,7 @@
             canvasEl.drawImage(bg, 0, 0, 350, 300);
             canvasEl.fillStyle = "#333";
             canvasEl.beginPath();
+            canvasEl.rect(player.x, player.y, player.width, player.height);
             $(document).keydown(function (event) {
                 if (event.key === "a") { //&& !player.x > canvasEl.width
                     player.x -= 0.1;
@@ -100,7 +101,6 @@
                     player.x += 0.1;
                 }
             });
-            canvasEl.rect(player.x, player.y, player.width, player.height);
             canvasEl.fill();
             window.requestAnimationFrame(gameLoop);
         };
