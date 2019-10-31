@@ -58,34 +58,67 @@
             height: 300px;
             width: 300px;
         }
+        #screen {
+            display: none;
+            /*background-image: url("imgs/contrabackground.png");*/
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
     </style>
 </head>
 <body>
     <div class="normal">
         <h2>CONTRA</h2>
         <div class="autoplay">
-            <img src="imgs/contrabackground.png" alt="broken contra gif" class="bg">
+<!--            <img src="imgs/contra.gif" alt="gif of contra gameplay">-->
+            <canvas id="screen" width="350" height="300"></canvas>
+            <img src="imgs/contrabackground.png" alt="" id="background" style="display: none">
         </div>
     </div>
     <audio src="galaga.mp3" style="display: none" id="galaga"></audio>
     <script src="js/jquery-2.2.4.js"></script>
-<!--    <script src="slick-1.8.1/slick/slick.min.js"></script>-->
     <script>
+        var canvasEl = document.querySelector("canvas").getContext("2d");
+        var player = {
+            x: 175,
+            y: 225,
+            height: 75,
+            width: 25
+        };
+        var bg = document.getElementById("background");
+        var gameLoop = function () {
+            canvasEl.clearRect(0, 0, 350, 300);
+            canvasEl.drawImage(bg, 0, 0, 350, 300);
+            canvasEl.fillStyle = "#333";
+            canvasEl.beginPath();
+            $(document).keydown(function (event) {
+                if (event.key === "a") { //&& !player.x > canvasEl.width
+                    player.x -= 0.1;
+                }
+                if (event.key === "d") { // && !player.x < 0
+                    player.x += 0.1;
+                }
+            });
+            canvasEl.rect(player.x, player.y, player.width, player.height);
+            canvasEl.fill();
+            window.requestAnimationFrame(gameLoop);
+        };
+
+        function contra() {
+            $("#screen").css({"display": "inline-block"});
+            gameLoop();
+        }
+
     var code = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a", "Enter"];
     var currPos= 0;
-    var galagaH = document.getElementById("galaga");
-
     $(document).keyup(function(event){
-        console.log(event.key);
         if (event.key === code[currPos]) {
             if (event.key === code[code.length -1]) {
                 currPos = 0;
-                galagaH.play();
-                $("img").css("display", "inline-block");
                 $("body").css("background-color", "black");
                 $("div").css({"animation": "Konami", "animation-duration": "30s", "animation-iteration-count": "infinite"})
-                // document.getElementsByTagName('div').style.animation = 'Konami 30s infinite';
-                // alert("IT WORKED");
+                contra();
             }
             else {
                 currPos++
