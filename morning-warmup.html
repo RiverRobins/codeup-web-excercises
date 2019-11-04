@@ -178,6 +178,104 @@
         // countTo(24);
         // countTo(144);
 
+        // function fizzbuzz() {
+        //     for(var i=1;i<101; i++){console.log(i%3===0||i%5===0?(i%5===0&&i%3===0?"FizzBuzz":(i%3===0?"Fizz":"Buzz")):i);}
+        // }
+        // fizzbuzz();
+        //
+        // function fizzbuzzOpt() {
+        //     for(var i=0;i<100;)console.log((++i%3?'':'fizz')+(i%5?'':'buzz')||i)
+        // }
+        // fizzbuzzOpt();
+
+        // function FIVE(n) {
+        //     if (n.toUpperCase() === "FIVE") {
+        //         return 5;
+        //     }
+        // }
+        // var f = "five";
+        // console.log(FIVE("five"));
+        // console.log(FIVE("FiVe"));
+        // console.log(FIVE("FIVE"));
+        // console.log(FIVE("5"));
+        // console.log(FIVE("hello"));
+        // console.log(FIVE("no"));
+        // console.log(FIVE(f));
+
+        // var shoppingCarts = [
+        //     {
+        //         apples: 8,
+        //         bananas: 2,
+        //         oranges: 4,
+        //         grapes: 24
+        //     }, {
+        //         apples: 3,
+        //         bananas: 6,
+        //         oranges: 12,
+        //         grapes: 12
+        //     } , {
+        //         apples: 0,
+        //         bananas: 12,
+        //         oranges: 0,
+        //         grapes: 0
+        //     } , {
+        //         apples: 4,
+        //         bananas: 0,
+        //         oranges: 8,
+        //         grapes: 10
+        //     }
+        // ];
+        //
+        // function mostOf(item, array) {
+        //     var hi = array[0];
+        //     for (var i = 0; i < array.length; i++) {
+        //         if (array[i][item] > hi[item]) {
+        //             hi = array[i];
+        //         }
+        //     }
+        //     return hi;
+        // }
+        // console.log(mostOf("apples", shoppingCarts));
+        // console.log(mostOf("bananas", shoppingCarts));
+        // console.log(mostOf("oranges", shoppingCarts));
+        // console.log(mostOf("grapes", shoppingCarts));
+        var students = [
+            {
+                name: "Mary",
+                grade: 10,
+                gpa: 3.7,
+                isRegistered: true
+            },
+            {
+                name: "Tim",
+                grade: 12,
+                gpa: 3.2,
+                isRegistered: false
+            },
+            {
+                name: "Ellie",
+                grade: 9,
+                gpa: 4.0,
+                isRegistered: false
+            },
+            {
+                name: "Alex",
+                grade: 10,
+                gpa: 3.9,
+                isRegistered: true
+            }
+        ];
+        function isIn(n) {
+            var temp = [];
+            n.forEach(function (item) {
+                if (!item.isRegistered) {
+                    temp.push(item);
+                }
+            });
+            return temp;
+        }
+        console.log(isIn(students));
+
         function makePerson(n, m) {
             var temp = {
                 name: n,
@@ -190,7 +288,7 @@
         arrayOfPeople.push(makePerson("Mahm-Ah", 36));
         arrayOfPeople.push(makePerson("John", 24));
         arrayOfPeople.push(makePerson("Boomer", 45));
-
+      
     </script>
 </body>
 </html>
