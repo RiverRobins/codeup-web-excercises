@@ -12,7 +12,8 @@
             margin-right: auto;
         }
         .invisible {
-            visibility: hidden;
+            /*visibility: hidden;*/
+            display: none;
         }
         .hi {
             background-color: black;
@@ -33,10 +34,23 @@
             border: 1px solid gray;
             justify-content: space-evenly;
         }
+        .x {
+            background-color: silver;
+            height: 100px;
+            width: 80%;
+        }
+        .x span {
+            float: left;
+            border: 1px solid black;
+        }
     </style>
 </head>
 <body>
-
+    <div class="lesson x">
+        <span>x</span>
+        <h1>Would you like to sign up for our newsletter?</h1>
+    </div>
+    <h2 id="register" style="display: none">REGISTER WITH US!!</h2>
     <div class="lesson">
         <button onclick="t();">Show fact about each park.</button>
         <dl>
@@ -53,7 +67,7 @@
             <dt>Iguazu National Park</dt>
             <dd>Is 259 square miles in size</dd>
             <dt>Skeleton Coast National Park</dt>
-            <dd>247 uniqe species of bird have been recorded here</dd>
+            <dd>247 unique species of bird have been recorded here</dd>
         </dl>
     </div>
 
@@ -105,7 +119,7 @@
         $("dd").addClass("invisible");
         // $("dt").addClass("");
         function t() {
-            $("dd").toggleClass("invisible");
+            $("dd").slideToggle();
         }
         $("dt").click(function () {
             $(this).toggleClass("hi");
@@ -117,18 +131,19 @@
                 $(this).children().last().css("background-color", "yellow");
             })
         }
-
         $("h3").click(function(){
             $(this).parent().children("ul").children("li").css({"font-weight": "bold"});
         });
-
         $("li").click(function () {
             $(this).parent().children().first().css("color", "blue");
         });
         $("#left").click(function () {
             console.log($(this).parent().parent().children("#pics-con").children());
         });
-
+        $(".x span").click(function () {
+            $(this).parent().hide();
+        });
+        $("#register").delay(8000).fadeIn();
     </script>
 
 </body>
