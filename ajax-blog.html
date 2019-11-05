@@ -3,6 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Blog</title>
+    <style>
+        #posts {
+            display: flex;
+            margin-left: 10%;
+            margin-right: 10%;
+            width: 80%;
+            height: calc(100% + 50px);
+            flex-wrap: wrap;
+            justify-content: space-between;
+            border: 1px solid black;
+            padding: 10px;
+            background-color: lightgray;
+        }
+        .post {
+            display: flex;
+            width: 100%;
+            border: 1px solid black;
+            flex-wrap: wrap;
+            flex-direction: column;
+            margin-bottom: 15px;
+            padding: 5px;
+            background-color: white;
+        }
+        hr {
+            width: 100%;
+        }
+        .tags {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .tag {
+            color: gray;
+            background-color: silver;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <div id="posts"></div>
@@ -15,15 +52,15 @@
         posts.done(function (data) {
             var content = "";
             $.each(data, function (index, item) {
-                content += "<div>";
-                content += "<h4>" + item.title + "</h4>";
-                content += "<p>" + item.content + "</p>";
-                content += "<div>";
-                $.each(data.categories, function (index2, item2) {
-                    content += "<a>" + item2 + "</a>"
+                content += "<div class='post'>";
+                content += "<h4>" + item.title + "</h4><hr>";
+                content += "<p class='post-content'>" + item.content + "</p>";
+                content += "<hr><div class='tags'>";
+                $.each(item.categories, function (index2, item2) {
+                    content += "<a href='' class='tag'> #" + item2 + " </a>"
                 });
                 content += "</div>";
-                content += "<div>" + item.date + "</div>"
+                content += "<div class='date'>" + "<p>" + item.date + "</p>" + "</div></div>"
             });
             $("#posts").append(content);
         }).fail(function () {
