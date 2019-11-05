@@ -3,13 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather Map</title>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        #map {
+            height: 600px;
+            width: 600px;
+        }
+    </style>
 </head>
 <body>
+
+<div id='map'></div>
+
+
 <script src="js/jquery-2.2.4.js"></script>
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
 <script src="js/mapbox.geocoder-utils.js"></script>
 <script src="js/keys.js"></script>
-<script src="js/mapbox_API.js"></script>
-<script></script>
+<script>
+    // add user input here
+
+    var darkSkyData = $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.4241,-98.4936");
+    var dsLat = 0, dsLong = 0;
+
+    darkSkyData.done(function (items) {
+        dsLat = items.latitude;
+        dsLong = items.longitude;
+
+        console.log("Lat: " + dsLat + "\n Long: " + dsLong);
+
+        mapboxgl.accessToken = mapBoxKey;
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/dark-v9',
+            zoom: 16,
+            center: [dsLong, dsLat]
+        });
+    });
+</script>
 </body>
 </html>
