@@ -1,37 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Online Store</title>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <style>
+        #posts {
+            display: flex;
+            margin-left: 10%;
+            margin-right: 10%;
+            width: 80%;
+            height: calc(100% + 50px);
+            flex-wrap: wrap;
+            justify-content: space-between;
+            border: 1px solid black;
+            padding: 10px;
+            background-color: lightgray;
+        }
+        .post {
+            display: flex;
+            width: 100%;
+            border: 1px solid black;
+            flex-wrap: wrap;
+            flex-direction: column;
+            margin-bottom: 15px;
+            padding: 5px;
+            background-color: white;
+        }
+        hr {
+            width: 100%;
+        }
+        .tags {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .tag {
+            color: gray;
+            background-color: silver;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-
-<h1>My Tool Store</h1>
-
-<table id="products">
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Categories</th>
-        </tr>
-    </thead>
-    <tbody id="insertProducts"></tbody>
-</table>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
-<script>
-(function() {
-    "use strict";
-    // TODO: Create an ajax GET request for /data/inventory.json
-
-    // TODO: Take the data from inventory.json and append it to the products table
-    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
-    //             its contents and fields
-    //       HINT: You will want to target #insertProducts for your new HTML elements
-})();
-</script>
-
+    <div id="posts"></div>
 </body>
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    function refreshPosts() {
+        var posts = $.ajax("data/blog.json");
+        $("#posts").innerHTML = "";
+        posts.done(function (data) {
+            var content = "";
+            $.each(data, function (index, item) {
+                content += "<div class='post'>";
+                content += "<h4>" + item.title + "</h4><hr>";
+                content += "<p class='post-content'>" + item.content + "</p>";
+                content += "<hr><div class='tags'>";
+                $.each(item.categories, function (index2, item2) {
+                    content += "<a href='' class='tag'> #" + item2 + " </a>"
+                });
+                content += "</div>";
+                content += "<div class='date'>" + "<p>" + item.date + "</p>" + "</div></div>"
+            });
+            $("#posts").append(content);
+        }).fail(function () {
+            console.log("Request failed");
+        })
+    }
+    refreshPosts();
+</script>
 </html>
