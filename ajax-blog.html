@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
+    <div id="posts"></div>
+</body>
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    function refreshPosts() {
+        var posts = $.ajax("data/blog.json");
+        $("#posts").innerHTML = "";
+        posts.done(function (data) {
+            var content = "";
+            $.each(data, function (index, item) {
+                content += "<div>";
+                content += "<h4>" + item.title + "</h4>";
+                content += "<p>" + item.content + "</p>";
+                content += "<div>";
+                $.each(data.categories, function (index2, item2) {
+                    content += "<a>" + item2 + "</a>"
+                });
+                content += "</div>";
+                content += "<div>" + item.date + "</div>"
+            });
+            $("#posts").append(content);
+        }).fail(function () {
+            console.log("Request failed");
+        })
+    }
+    refreshPosts();
+</script>
+</html>
