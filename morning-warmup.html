@@ -331,46 +331,56 @@
         //2: Arachnoboards, extremely useful and has a strong, active community of people that share an uncommon hobby
         //3: W3 Schools/StackOverflow, the reasons I don't cry being a programmer
 
-        function spellNum(n) {
-            switch (n) {
-                case 1: {
-                    return "one"
-                }
-                case 2: {
-                    return "two"
-                }
-                case 3: {
-                    return "three"
-                }
-                case 4: {
-                    return "cursed number"
-                }
-                case 5: {
-                    return "five"
-                }
-                case 6: {
-                    return "six"
-                }
-                case 7: {
-                    return "seven"
-                }
-                case 8: {
-                    return "eight"
-                }
-                case 9: {
-                    return "nine"
-                }
-                case 10: {
-                    return "ten"
-                }
+        // function spellNum(n) {
+        //     switch (n) {
+        //         case 1: {
+        //             return "one"
+        //         }
+        //         case 2: {
+        //             return "two"
+        //         }
+        //         case 3: {
+        //             return "three"
+        //         }
+        //         case 4: {
+        //             return "cursed number"
+        //         }
+        //         case 5: {
+        //             return "five"
+        //         }
+        //         case 6: {
+        //             return "six"
+        //         }
+        //         case 7: {
+        //             return "seven"
+        //         }
+        //         case 8: {
+        //             return "eight"
+        //         }
+        //         case 9: {
+        //             return "nine"
+        //         }
+        //         case 10: {
+        //             return "ten"
+        //         }
+        //     }
+        // }
+        //
+        // console.log(spellNum(1));
+        // console.log(spellNum(2));
+        // console.log(spellNum(3));
+        // console.log(spellNum(4));
+        // console.log(spellNum(10));
+
+        function youreWelcome(n) {
+            if (n.gratitude === "Thank You") {
+                return "You're welcome"
             }
         }
 
-        console.log(spellNum(1));
-        console.log(spellNum(2));
-        console.log(spellNum(3));
-        console.log(spellNum(4));
-        console.log(spellNum(10));
+        console.log(youreWelcome({gratitude: "Thank You"}));
+        console.log(youreWelcome({gratitude: "no"}));
+        console.log(youreWelcome({m: "Thank You"}));
 
     </script>
 </body>
