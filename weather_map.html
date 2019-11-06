@@ -13,15 +13,15 @@
 </head>
 <body>
 <div id="main">
+    <div id="forecast">
+<!--        forecast generates here-->
+        <p>Not empty</p>
+    </div>
     <div id="input">
         <label for="latitude">Enter Latitude</label>
         <input type="text" id="latitude">
         <label for="longitude">Enter Longitude</label>
         <input type="text" id="longitude">
-    </div>
-    <div id="forecast">
-<!--        forecast generates here-->
-        <p>Not empty</p>
     </div>
     <div id='map'></div>
 </div>
@@ -48,24 +48,19 @@
 
     darkSkyData.done(function (items) {
         var dsdLen = darkSkyData.responseJSON.daily.length;
+        console.log(darkSkyData.responseJSON.daily);
 
         for (var i = 0; i < 2; i++) {
-
-            // var content = "<div class='card'>";
-            // content += darkSkyData.responseJSON.daily[i].icon;
-            // content += ("</div>");
-            // $("#forecast").append(content);
-
             $("#forecast").empty();
-            for (var i = 0; i < 3; i++) {
-                $("#forecast").append("<div><p>" + darkSkyData.responseJSON.daily.data[i].summary + "</p></div>");
-                darkSkyData.responseJSON.daily.data[i].summary
+            for (var i = 3; i < 6; i++) {
+                var card = "<div>";
+                card += "<p> Summary: " + darkSkyData.responseJSON.daily.data[i].summary + "</p>";
+                card += "<img src='climacons-master/SVG/" + darkSkyData.responseJSON.daily.data[i].icon + ".svg'";
+                card += "</div>";
+                console.log(darkSkyData.responseJSON.daily.data[i].icon + "\n" + darkSkyData.responseJSON.daily.data[i].date);
+                $("#forecast").append(card);
             }
-
         }
-
-        // darkSkyData.
-
         dsLat = items.latitude;
         dsLong = items.longitude;
 
