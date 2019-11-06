@@ -5,23 +5,106 @@
     <title>Weather Map</title>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'/>
     <style>
+        #meme{
+            display: none;
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        #meme img {
+            width: 100%;
+            height: auto;
+            max-height: 425px;
+        }
         #map {
-            height: 600px;
-            width: 600px;
+            height: 400px;
+            width: 100%;
+        }
+        #main{
+            width: 70%;
+            margin-right: 15%;
+            margin-left: 15%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        #forecast {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        #inputs {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .block {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            padding: 5px;
+            width: 175px;
+            height: auto;
+            align-content: center;
+            align-items: center;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+
+            border: 1px solid black;
+            color: black;
+            background-color: unset;
+        }
+        .icon {
+            background-color: unset;
+            border-radius: unset;
+        }
+        .sum {
+            align-self: flex-start;
+        }
+        .dark {
+            border: none;
+            color: gray;
+            background-color: #00002b;
+            box-shadow: 0px 0px 15px 5px steelblue;
+            text-shadow: 0px 0px 15px steelblue;
+        }
+        .dark-text{
+            color: gray;
+            text-shadow: 0px 0px 15px steelblue;
+        }
+        .dark .icon {
+            display: inline-block;
+            padding: unset;
+            background-color: steelblue;
+            border-radius: 50%;
+            width: 50%;
         }
     </style>
 </head>
 <body>
+<div id="meme">
+    <img src="imgs/weather-icons/meme.png" alt="The Dark Side is a pathway to many abilities, come consider to be unnatural.">
+</div>
 <div id="main">
     <div id="forecast">
 <!--        forecast generates here-->
         <p>Not empty</p>
     </div>
-    <div id="input">
-        <label for="latitude">Enter Latitude</label>
-        <input type="text" id="latitude">
-        <label for="longitude">Enter Longitude</label>
-        <input type="text" id="longitude">
+    <div id="inputs">
+        <div id="input-address">
+            <label for="latitude">Enter Address</label>
+            <input type="text" id="address">
+            <button id="search-address">Search!</button>
+        </div>
+        <div id="input-cords">
+            <label for="latitude">Enter Latitude</label>
+            <input type="text" id="latitude">
+            <label for="longitude">Enter Longitude</label>
+            <input type="text" id="longitude">
+            <button id="search-cord">Search!</button>
+        </div>
     </div>
     <div id='map'></div>
 </div>
@@ -32,47 +115,86 @@
 <script src="js/keys.js"></script>
 <script>
     // add user input here
-    var nLong, nLat;
-    $("html").keyup(function () {
-        nLong = parseFloat($("#longitude").val());
-        nLat = parseFloat($("#latitude").val());
-        console.log("lat: " + nLong + "\n long:" + nLat);
-    });
-
-    var darkSkyData = $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/" + "29.4241,-98.4936");  //nLat + "," + nLong
-    var dsLat = 0, dsLong = 0;
-
-    function showForecast(){
-
-    }
-
-    darkSkyData.done(function (items) {
-        var dsdLen = darkSkyData.responseJSON.daily.length;
-        console.log(darkSkyData.responseJSON.daily);
-
-        for (var i = 0; i < 2; i++) {
+    var nLat, nLong, darkMode;
+    darkMode = false;
+    nLat = 29.4241;
+    nLong = -98.4936;
+    function getWeather(lat, long) {
+        var darkSkyData = $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/" + lat + "," + long);  // "29.4241,-98.4936"
+        darkSkyData.done(function (items) {
+            console.log(darkSkyData.responseJSON.daily.data);
             $("#forecast").empty();
-            for (var i = 3; i < 6; i++) {
-                var card = "<div>";
-                card += "<p> Summary: " + darkSkyData.responseJSON.daily.data[i].summary + "</p>";
-                card += "<img src='climacons-master/SVG/" + darkSkyData.responseJSON.daily.data[i].icon + ".svg'";
+            for (var i = 0; i < 3; i++) {
+                var card = "<div class='block' id='block-" + (i + 1) +"'>";
+                card += "<p class='sum'>" + darkSkyData.responseJSON.daily.data[i].summary + "</p>";
+                card += "<p>Humidity will be " + (parseFloat(darkSkyData.responseJSON.daily.data[i].humidity) * 100) + "%.</p>";
+                card += "<span class='icon'><img src='imgs/weather-icons/" + darkSkyData.responseJSON.daily.data[i].icon + ".svg'></span>";
                 card += "</div>";
-                console.log(darkSkyData.responseJSON.daily.data[i].icon + "\n" + darkSkyData.responseJSON.daily.data[i].date);
                 $("#forecast").append(card);
             }
-        }
-        dsLat = items.latitude;
-        dsLong = items.longitude;
-
-        console.log("Lat: " + dsLat + "\n Long: " + dsLong);
-
+        });
+        applyTheme();
+    }
+    function showForecast(lat, long){  //29.4241 , -98.4936
         mapboxgl.accessToken = mapBoxKey;
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/dark-v9',
-            zoom: 16,
-            center: [dsLong, dsLat]
+            zoom: 2,
+            center: [nLong, nLat]
         });
+        getWeather(nLat, nLong);
+        var marker = new mapboxgl.Marker({
+            draggable: true
+        })
+            .setLngLat([nLong, nLat])
+            .addTo(map);
+        function onDragEnd() {
+            var lngLat = marker.getLngLat();
+            nLong = lngLat.lng;
+            nLat = lngLat.lat;
+            console.log(nLat + "\n" + nLong);
+            getWeather(nLat, nLong);
+        }
+        marker.on('dragend', onDragEnd);
+    }
+    showForecast(nLat, nLong);
+    $("#search-cord").click(function () {
+        nLat = parseFloat($("#latitude").val());
+        nLong = parseFloat($("#longitude").val());
+        showForecast(nLat, nLong);
+    });
+    $("#search-address").click(function () {
+        var search = $("#address").val();
+        geocode(search, mapBoxKey).then(function(result) {
+            nLat = result[1];
+            nLong = result[0];
+            showForecast(nLat, nLong);
+        });
+    });
+
+    function applyTheme() {
+        $("html").toggleClass("dark");
+        $(".card").toggleClass("dark");
+        $("p").toggleClass("dark-text");
+    }
+
+    //meme stuff below
+    var code = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a", "Enter"];
+    var currPos= 0;
+    $(document).keyup(function(event){
+        if (event.key === code[currPos]) {
+            if (event.key === code[code.length -1]) {
+                currPos = 0;
+                $("#meme").css("display", "block");
+            }
+            else {
+                currPos++
+            }
+        }
+        else {
+            currPos = 0;
+        }
     });
 </script>
 </body>
