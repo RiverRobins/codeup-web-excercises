@@ -56,20 +56,13 @@
             // content += ("</div>");
             // $("#forecast").append(content);
 
-
             $("#forecast").empty();
-            for (var i = 0; i < dsdLen; i++) {
-                var content = "<div>";
-                content += "<p>" + darkSkyData.responseJSON.daily.data[i].summary + "</p>";
-                content += "</div>";
-                $("#forecast").innerHTML.append(content);
+            for (var i = 0; i < 3; i++) {
+                $("#forecast").append("<div><p>" + darkSkyData.responseJSON.daily.data[i].summary + "</p></div>");
+                darkSkyData.responseJSON.daily.data[i].summary
             }
 
         }
-
-
-
-
 
         // darkSkyData.
 
