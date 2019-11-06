@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <title>Blog</title>
     <style>
-        #posts {
-            display: flex;
+        .main {
+            width: 80%;
             margin-left: 10%;
             margin-right: 10%;
-            width: 80%;
-            height: calc(100% + 50px);
-            flex-wrap: wrap;
-            justify-content: space-between;
             border: 1px solid black;
             padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        #posts {
+            height: calc(100% + 50px);
             background-color: lightgray;
         }
         .post {
@@ -42,13 +44,17 @@
     </style>
 </head>
 <body>
-    <div id="posts"></div>
+    <div class="bar main">
+        <img src="" alt="logo" class="logo">
+        <button class="refresh">refresh</button>
+        <div class="compose-con"></div>
+    </div>
+    <div id="posts" class="main"><!--Posts generate here...--></div>
 </body>
 <script src="js/jquery-2.2.4.js"></script>
 <script>
     function refreshPosts() {
         var posts = $.ajax("data/blog.json");
-        $("#posts").innerHTML = "";
         posts.done(function (data) {
             var content = "";
             $.each(data, function (index, item) {
@@ -60,13 +66,19 @@
                     content += "<a href='' class='tag'> #" + item2 + " </a>"
                 });
                 content += "</div>";
-                content += "<div class='date'>" + "<p>" + item.date + "</p>" + "</div></div>"
+                content += "<div class='date'>" + "<p>" + item.date + "</p>" + "</div></div>";
             });
+            $("#posts").empty();
             $("#posts").append(content);
         }).fail(function () {
             console.log("Request failed");
         })
     }
+
     refreshPosts();
+    $(".refresh").click(function () {
+        refreshPosts();
+    })
+
 </script>
 </html>

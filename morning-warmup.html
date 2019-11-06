@@ -372,32 +372,44 @@
         // console.log(spellNum(4));
         // console.log(spellNum(10));
 
-        function youreWelcome(n) {
-            if (n.gratitude === "Thank You") {
-                return "You're welcome"
+        // function youreWelcome(n) {
+        //     if (n.gratitude === "Thank You") {
+        //         return "You're welcome"
+        //     }
+        //     else{}
+        // }
+        //
+        // console.log(youreWelcome({gratitude: "Thank You"}));
+        // console.log(youreWelcome({gratitude: "no"}));
+        // console.log(youreWelcome({m: "Thank You"}));
+        //
+        //
+        // console.log(isIn(students));
+        //
+        // function makePerson(n, m) {
+        //     var temp = {
+        //         name: n,
+        //         age: m
+        //     };
+        //     return temp
+        // }
+        // var arrayOfPeople = [];
+        // arrayOfPeople.push(makePerson("Joe", 33));
+        // arrayOfPeople.push(makePerson("Mahm-Ah", 36));
+        // arrayOfPeople.push(makePerson("John", 24));
+        // arrayOfPeople.push(makePerson("Boomer", 45));
+
+        function randBool() {
+            if (Math.floor(Math.random() + 0.5) === 0) {
+                return true
             }
-            else{}
+            else {
+                return false
+            }
         }
-
-        console.log(youreWelcome({gratitude: "Thank You"}));
-        console.log(youreWelcome({gratitude: "no"}));
-        console.log(youreWelcome({m: "Thank You"}));
-
-
-        console.log(isIn(students));
-
-        function makePerson(n, m) {
-            var temp = {
-                name: n,
-                age: m
-            };
-            return temp
+        for (var i = 0; i < 5; i++) {
+            console.log(randBool());
         }
-        var arrayOfPeople = [];
-        arrayOfPeople.push(makePerson("Joe", 33));
-        arrayOfPeople.push(makePerson("Mahm-Ah", 36));
-        arrayOfPeople.push(makePerson("John", 24));
-        arrayOfPeople.push(makePerson("Boomer", 45));
       
     </script>
 </body>

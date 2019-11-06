@@ -14,7 +14,7 @@ var ar = [
         address: "155 E Commerce St, San Antonio, TX 78205"
     }
 ];
-mapboxgl.accessToken = mapboxToken;
+mapboxgl.accessToken = mapBoxKey;
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/dark-v9',
@@ -23,7 +23,7 @@ var map = new mapboxgl.Map({
 });
 ar.forEach(function (value) {
     var results;
-    geocode(value.address, mapboxToken).then(function(result) {
+    geocode(value.address, mapBoxKey).then(function(result) {
         results = result;
         var popup = new mapboxgl.Popup()
             .setText(value.name)
