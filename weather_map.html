@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather Map</title>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'/>
     <style>
         #map {
             height: 600px;
@@ -12,9 +12,19 @@
     </style>
 </head>
 <body>
-
-<div id='map'></div>
-
+<div id="main">
+    <div id="input">
+        <label for="latitude">Enter Latitude</label>
+        <input type="text" id="latitude">
+        <label for="longitude">Enter Longitude</label>
+        <input type="text" id="longitude">
+    </div>
+    <div id="forecast">
+<!--        forecast generates here-->
+        <p>Not empty</p>
+    </div>
+    <div id='map'></div>
+</div>
 
 <script src="js/jquery-2.2.4.js"></script>
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
@@ -22,11 +32,47 @@
 <script src="js/keys.js"></script>
 <script>
     // add user input here
+    var nLong, nLat;
+    $("html").keyup(function () {
+        nLong = parseFloat($("#longitude").val());
+        nLat = parseFloat($("#latitude").val());
+        console.log("lat: " + nLong + "\n long:" + nLat);
+    });
 
-    var darkSkyData = $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.4241,-98.4936");
+    var darkSkyData = $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/" + "29.4241,-98.4936");  //nLat + "," + nLong
     var dsLat = 0, dsLong = 0;
 
+    function showForecast(){
+
+    }
+
     darkSkyData.done(function (items) {
+        var dsdLen = darkSkyData.responseJSON.daily.length;
+
+        for (var i = 0; i < 2; i++) {
+
+            // var content = "<div class='card'>";
+            // content += darkSkyData.responseJSON.daily[i].icon;
+            // content += ("</div>");
+            // $("#forecast").append(content);
+
+
+            $("#forecast").empty();
+            for (var i = 0; i < dsdLen; i++) {
+                var content = "<div>";
+                content += "<p>" + darkSkyData.responseJSON.daily.data[i].summary + "</p>";
+                content += "</div>";
+                $("#forecast").innerHTML.append(content);
+            }
+
+        }
+
+
+
+
+
+        // darkSkyData.
+
         dsLat = items.latitude;
         dsLong = items.longitude;
 
