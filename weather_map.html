@@ -19,6 +19,10 @@
         #map {
             height: 400px;
             width: 100%;
+            background-color: #000030;
+            color: lightblue;
+            text-shadow: 0px 0px 15px steelblue;
+            box-shadow: 0px 0px 10px 5px steelblue;
         }
         #main{
             width: 70%;
@@ -63,6 +67,12 @@
             border: none;
             background-color: steelblue;
             color: lightblue;
+        }
+        button:focus {
+            background-color: steelblue;
+            color: lightblue;
+            text-shadow: 0px 0px 15px steelblue;
+            box-shadow: 0px 0px 10px 5px steelblue;
         }
         .block {
             display: flex;
@@ -170,6 +180,8 @@
                 var card = "<div class='block' id='block-" + (i + 1) +"'>";
                 card += "<p class='sum'>" + darkSkyData.responseJSON.daily.data[i].summary + "</p>";
                 card += "<p>Humidity will be " + (parseFloat(darkSkyData.responseJSON.daily.data[i].humidity) * 100) + "%.</p>";
+                card += "<p> The high for the day is " + darkSkyData.responseJSON.daily.data[i].temperatureHigh + "°F </p>";
+                card += "<p> The low for the day is " + darkSkyData.responseJSON.daily.data[i].temperatureLow + "°F </p>";
                 card += "<span class='icon'><img src='imgs/weather-icons/" + darkSkyData.responseJSON.daily.data[i].icon + ".svg'></span>";
                 card += "</div>";
                 $("#forecast").append(card);
