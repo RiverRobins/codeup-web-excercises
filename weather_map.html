@@ -155,12 +155,14 @@
 <script src="js/mapbox.geocoder-utils.js"></script>
 <script src="js/keys.js"></script>
 <script>
-    // add user input here
+
+    //defaults
     var nLat, nLong, darkMode;
-    darkMode = false;
+    darkMode = true;
     nLat = 29.4241;
     nLong = -98.4936;
 
+    //colors
     function applyTheme() {
         $("html").addClass("dark-background");
         $("#main").addClass("dark-main dark");
@@ -169,14 +171,15 @@
         $("p").addClass("dark-text");
     }
 
+    //applies theme immediately
     applyTheme();
 
+    //Generates weather cards
     function getWeather(lat, long) {
-        var darkSkyData = $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/" + lat + "," + long);  // "29.4241,-98.4936"
+        var darkSkyData = $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/" + lat + "," + long);  // generates URL for coords
         darkSkyData.done(function (items) {
-            console.log(darkSkyData.responseJSON.daily.data);
             $("#forecast").empty();
-            for (var i = 0; i < 3; i++) {
+            for (var i = 0; i < 3; i++) {  //could replace 3 with however many days worth of info desired. Also For Loops are better than Foreach Loops.
                 var card = "<div class='block' id='block-" + (i + 1) +"'>";
                 card += "<p class='sum'>" + darkSkyData.responseJSON.daily.data[i].summary + "</p>";
                 card += "<p>Humidity will be " + (parseFloat(darkSkyData.responseJSON.daily.data[i].humidity) * 100) + "%.</p>";
@@ -186,10 +189,14 @@
                 card += "</div>";
                 $("#forecast").append(card);
             }
-            applyTheme();
+            applyTheme(); //applies colors to newly generated cards
         });
     }
+
+    //Generates the map
     function showForecast(lat, long){  //29.4241 , -98.4936
+
+        //gets mapbox data
         mapboxgl.accessToken = mapBoxKey;
         var map = new mapboxgl.Map({
             container: 'map',
@@ -197,12 +204,16 @@
             zoom: 2,
             center: [nLong, nLat]
         });
+
+        //generates the marker
         getWeather(nLat, nLong);
         var marker = new mapboxgl.Marker({
             draggable: true
         })
             .setLngLat([nLong, nLat])
             .addTo(map);
+
+        //gets coords on end
         function onDragEnd() {
             var lngLat = marker.getLngLat();
             nLong = lngLat.lng;
@@ -212,13 +223,17 @@
         }
         marker.on('dragend', onDragEnd);
     }
+
+    //called immediately so that it shows on the page by default
     showForecast(nLat, nLong);
-    $("#search-cord").click(function () {
+
+    //event listeners for buttons
+    $("#search-cord").click(function () { //for search by Lat/Long
         nLat = parseFloat($("#latitude").val());
         nLong = parseFloat($("#longitude").val());
         showForecast(nLat, nLong);
     });
-    $("#search-address").click(function () {
+    $("#search-address").click(function () { //for search by address
         var search = $("#address").val();
         geocode(search, mapBoxKey).then(function(result) {
             nLat = result[1];
@@ -227,7 +242,7 @@
         });
     });
 
-    //meme stuff below
+    //Meme stuff below, not related to lesson
     var code = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a", "Enter"];
     var currPos= 0;
     $(document).keyup(function(event){
