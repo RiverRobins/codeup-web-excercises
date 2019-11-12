@@ -22,9 +22,9 @@ var map = new mapboxgl.Map({
     center: [-98.4916, 29.4252]
 });
 ar.forEach(function (value) {
-    var results;
+    // var results;
     geocode(value.address, mapBoxKey).then(function(result) {
-        results = result;
+        var results = result;
         var popup = new mapboxgl.Popup()
             .setText(value.name)
             .addTo(map);

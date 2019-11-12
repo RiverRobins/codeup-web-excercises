@@ -399,18 +399,31 @@
         // arrayOfPeople.push(makePerson("John", 24));
         // arrayOfPeople.push(makePerson("Boomer", 45));
 
-        function randBool() {
-            if (Math.floor(Math.random() + 0.5) === 0) {
-                return true
+        // function randBool() {
+        //     if (Math.floor(Math.random() + 0.5) === 0) {
+        //         return true
+        //     }
+        //     else {
+        //         return false
+        //     }
+        // }
+        // for (var i = 0; i < 5; i++) {
+        //     console.log(randBool());
+        // }
+
+        var arr = [1,2,3,4,5,6,7,8];
+        function showEvens(n) {
+            var temp = [];
+            for (var i = 0; i < n.length; i++) {
+                if (n[i] % 2 === 0) {
+                    temp.push(n[i]);
+                }
             }
-            else {
-                return false
-            }
+            return temp
         }
-        for (var i = 0; i < 5; i++) {
-            console.log(randBool());
-        }
-      
+
+        console.log(showEvens(arr));
+
     </script>
 </body>
 </html>
