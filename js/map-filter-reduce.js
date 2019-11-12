@@ -45,13 +45,25 @@ console.log(emails);
 const avgExp = users.reduce((tot, user) => {return tot + user.yearsOfExperience}, 0) / users.length;
 console.log(avgExp);
 
-const userWithLongestEmail = users.reduce((hi, user) => {
-    return user.email.length > hi.email.length ? user : hi;
-});
+const userWithLongestEmail = users.reduce((hi, user) => {return user.email.length > hi.email.length ? user : hi});
 console.log(userWithLongestEmail);
 
+const userStr = users.reduce((str, user) => {return `${str} ${user.name}${user.id === 5 ? "." : ","}`}, 'These are our users:');
+console.log(userStr);
 
-const userStr = users.reduce((temp, user) => {
-    const temp = users.;
-    return `These are our users: ${user.name}`;
-});
+//BONUS
+const getUnique = n => {
+    let temp = [];
+    n.forEach(item => {
+        if (!temp.includes(item)){
+            temp.push(item);
+        }
+    });
+    return temp
+};
+
+const allLangs = getUnique(users.reduce((langs, current) => {
+    return `${langs},${current.languages}`;
+}, "Unique languages: ").split(","));
+
+console.log(allLangs);
