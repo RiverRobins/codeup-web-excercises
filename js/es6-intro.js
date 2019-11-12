@@ -113,9 +113,9 @@ const addF = (a, b) => a + b;
 //
 //      Check your work.
 
-// const myGreeting = (greeting = "Good",name = "morning") => {
-//     return `${greeting},${name}`;
-// };
+const myGreeting = (greeting = "Good",name = "morning") => {
+    return `${greeting},${name}`;
+};
 //
 // console.log(myGreeting());
 // console.log(myGreeting("Hello", "Sophie"));
