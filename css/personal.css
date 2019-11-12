@@ -79,14 +79,15 @@ div.banner p {
     text-align: center;
     padding-right: 15%;
     padding-left: 15%;
+    transition-duration: 2s;
+    transition: height;
+    text-shadow: 0px 0px 15px 10px red;
 }
-.meat {
-    background-color: gray;
-    /*padding: 15px;*/
-    border: 1px solid black;
-    box-shadow: 4px 4px 4px #555;
-    padding: 10px;
-}
+/*#content {*/
+/*    padding: 10px;*/
+/*    color: white;*/
+/*    text-shadow: 0px 0px 15px 10px red;*/
+/*}*/
 @media screen and (min-width:570px) {
     #smallest {
         display: flex;
