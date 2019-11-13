@@ -63,8 +63,8 @@ const getUnique = n => {
     return temp
 };
 //gets all values then passes the result into getUnique to filter.
-const allLangs = getUnique(users.reduce((langs, current) => {
+const unqLangs = getUnique(users.reduce((langs, current) => {
     return `${langs},${current.languages}`;
-}, "Unique languages: ").split(","));
+}, "Unique languages:").split(",")).join(" ");
 
-console.log(allLangs);
+console.log(unqLangs);
