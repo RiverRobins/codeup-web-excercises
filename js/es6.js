@@ -63,15 +63,14 @@ let names = [];
 //   return names.push(user.name);
 // });
 
-const getEmail = (n) => {for (let item of n){
-  return n.push(item.email);
-}};
+users.forEach(user => {
+  return emails.push(user.email);
+});
+users.forEach(user => {
+  return names.push(user.name);
+});
 
-const getName = (n) => {for (let item of n){
-  return n.push(item.name);
-}};
-
-getName(users);
+// getName(users);
 
 // TODO: replace `var` with `let` in the following declaration
 let developers = [];
