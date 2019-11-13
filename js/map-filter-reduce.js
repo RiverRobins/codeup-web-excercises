@@ -52,6 +52,7 @@ const userStr = users.reduce((str, user) => {return `${str} ${user.name}${user.i
 console.log(userStr);
 
 //BONUS
+//gets unique values
 const getUnique = n => {
     let temp = [];
     n.forEach(item => {
@@ -61,7 +62,7 @@ const getUnique = n => {
     });
     return temp
 };
-
+//gets all values then passes the result into getUnique to filter.
 const allLangs = getUnique(users.reduce((langs, current) => {
     return `${langs},${current.languages}`;
 }, "Unique languages: ").split(","));
