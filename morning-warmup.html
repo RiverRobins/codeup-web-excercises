@@ -411,6 +411,7 @@
         //     console.log(randBool());
         // }
 
+
         // var arr = [1,2,3,4,5,6,7,8];
         // function showEvens(n) {
         //     var temp = [];
@@ -437,6 +438,21 @@
         promises(5).then(message => console.log(message)).catch(message => console.log(message));
         promises("no").then(message => console.log(message)).catch(message => console.log(message));
         promises(NaN).then(message => console.log(message)).catch(message => console.log(message));
+      
+      
+        var arr = [1,2,3,4,5,6,7,8];
+        function showEvens(n) {
+            var temp = [];
+            for (var i = 0; i < n.length; i++) {
+                if (n[i] % 2 === 0) {
+                    temp.push(n[i]);
+                }
+            }
+            return temp
+        }
+        console.log(showEvens(arr));
+
+
         
 
     </script>

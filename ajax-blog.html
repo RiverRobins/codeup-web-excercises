@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <style>
+        .main {
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+            border: 1px solid black;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        #posts {
+            height: calc(100% + 50px);
+            background-color: lightgray;
+        }
+        .post {
+            display: flex;
+            width: 100%;
+            border: 1px solid black;
+            flex-wrap: wrap;
+            flex-direction: column;
+            margin-bottom: 15px;
+            padding: 5px;
+            background-color: white;
+        }
+        hr {
+            width: 100%;
+        }
+        .tags {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .tag {
+            color: gray;
+            background-color: silver;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bar main">
+        <img src="" alt="logo" class="logo">
+        <button class="refresh">refresh</button>
+        <div class="compose-con"></div>
+    </div>
+    <div id="posts" class="main"><!--Posts generate here...--></div>
+</body>
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    function refreshPosts() {
+        var posts = $.ajax("data/blog.json");
+        posts.done(function (data) {
+            var content = "";
+            $.each(data, function (index, item) {
+                content += "<div class='post'>";
+                content += "<h4>" + item.title + "</h4><hr>";
+                content += "<p class='post-content'>" + item.content + "</p>";
+                content += "<hr><div class='tags'>";
+                $.each(item.categories, function (index2, item2) {
+                    content += "<a href='' class='tag'> #" + item2 + " </a>"
+                });
+                content += "</div>";
+                content += "<div class='date'>" + "<p>" + item.date + "</p>" + "</div></div>";
+            });
+            $("#posts").empty();
+            $("#posts").append(content);
+        }).fail(function () {
+            console.log("Request failed");
+        })
+    }
+
+    refreshPosts();
+    $(".refresh").click(function () {
+        refreshPosts();
+    })
+
+</script>
+</html>

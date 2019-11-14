@@ -5,6 +5,7 @@
     <title>Bonus</title>
 </head>
 <body>
+<input type="text" id="input" name="input">
 <script>
     /*
  * Title: JS Objects Practice
@@ -1061,7 +1062,6 @@
                 temp = parseFloat(temp);
                 total += temp;
             }
-
             if (b === false) {
                 return (total.toFixed(2));
             }
@@ -1153,7 +1153,6 @@
             return total;
         },
         getAverageNumberOfUnreadMessages: function () {
-            var unreadArray = [];
             var total = this.getTotalNumberOfUnreadMessages();
             return (total / profiles.length);
         },
@@ -1181,7 +1180,52 @@
             };
         },
         getAllCompanyNames: function () {
-
+            var temp = [];
+            for (var i = 0; i < profiles.length; i++) {
+                temp.push(profiles[i].company);
+            }
+            return temp;
+        },
+        getMostCommonEyeColor: function () {
+            var brown = 0;
+            var blue = 0;
+            var green = 0;
+            for (var i = 0; i < profiles.length; i++) {
+                if (profiles[i].eyeColor === "brown") {
+                    brown++
+                }
+                else if (profiles[i].eyeColor === "blue") {
+                    blue++
+                }
+                else {
+                    green++
+                }
+            }
+            if (brown > blue && brown > green) {
+                return "brown"
+            }
+            else if (blue > brown && blue > green) {
+                return "blue"
+            }
+            else {
+                return "green"
+            }
+        },
+        getBalancesForActiveAndNonActive: function () {
+            var act = 0;
+            var not = 0;
+            for (var i = 0; i < profiles.length; i++) {
+                if (profiles[i].isActive === true) {
+                    act += this.makeNum(profiles[i].balance);
+                }
+                else {
+                    not += this.makeNum(profiles[i].balance);
+                }
+            }
+            return {
+                activeBalance: act.toFixed(2),
+                inactiveBalance: not.toFixed(2)
+            }
         }
     };
 
@@ -1213,6 +1257,17 @@
     // Why do you think changing person2 altered person1?
     // The term for this behavior is assignment by reference.
 
+    var person1 = {
+        name: "Jon"
+    };
+    var person2 = person1;
+
+    console.log(person1);
+    console.log(person2);
+    console.log("==============");
+    person2.name = "Bobert";
+    console.log(person1);
+    console.log(person2);
 
     // Exercise 7. More practice with assignment by reference
     // Add the following HTML to your index.html page in this project.
@@ -1222,8 +1277,13 @@
     // Create a second variable named inputElement.
     // var inputElement = document.getElementById("input");
     // now, run inputElement.value = "I am altering an object by altering its properties" in your JS console.
-    // See how both the "input" and "textInput" varialbes are referencing the same underlying HTML element?
+    // See how both the "input" and "textInput" variables are referencing the same underlying HTML element?
     // This behavior is another example of "assignment by reference"
+
+    var input = document.getElementById("input");
+
+    var inputElement = document.getElementById("input");
+
 </script>
 </body>
 </html>
