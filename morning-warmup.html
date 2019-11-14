@@ -378,11 +378,66 @@
         //     }
         //     else{}
         // }
+        //
         // console.log(youreWelcome({gratitude: "Thank You"}));
         // console.log(youreWelcome({gratitude: "no"}));
         // console.log(youreWelcome({m: "Thank You"}));
+        //
+        //
+        // console.log(isIn(students));
+        //
+        // function makePerson(n, m) {
+        //     var temp = {
+        //         name: n,
+        //         age: m
+        //     };
+        //     return temp
+        // }
+        // var arrayOfPeople = [];
+        // arrayOfPeople.push(makePerson("Joe", 33));
+        // arrayOfPeople.push(makePerson("Mahm-Ah", 36));
+        // arrayOfPeople.push(makePerson("John", 24));
+        // arrayOfPeople.push(makePerson("Boomer", 45));
 
+        // function randBool() {
+        //     if (Math.floor(Math.random() + 0.5) === 0) {
+        //         return true
+        //     }
+        //     else {
+        //         return false
+        //     }
+        // }
+        // for (var i = 0; i < 5; i++) {
+        //     console.log(randBool());
+        // }
 
+        // var arr = [1,2,3,4,5,6,7,8];
+        // function showEvens(n) {
+        //     var temp = [];
+        //     for (var i = 0; i < n.length; i++) {
+        //         if (n[i] % 2 === 0) {
+        //             temp.push(n[i]);
+        //         }
+        //     }
+        //     return temp
+        // }
+        // console.log(showEvens(arr));
+
+        const promises = n => {
+            return new Promise((resolve, reject) => {
+                if (n % 2 === 0) {
+                    resolve("Done");
+                }
+                else {
+                    reject("Rejected");
+                }
+            })
+        };
+        promises(6).then(message => console.log(message)).catch(message => console.log(message));
+        promises(5).then(message => console.log(message)).catch(message => console.log(message));
+        promises("no").then(message => console.log(message)).catch(message => console.log(message));
+        promises(NaN).then(message => console.log(message)).catch(message => console.log(message));
+        
 
     </script>
 </body>
