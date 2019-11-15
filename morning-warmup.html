@@ -5,7 +5,7 @@
     <title>Morning Warm-ups</title>
 </head>
 <body>
-    <h1>Deimos</h1>
+    <h1 id="id">Deimos</h1>
     <p>This is my morning warm-up page.</p>
     <script>
         //function addThings(a, b) {
@@ -424,16 +424,29 @@
         // }
         // console.log(showEvens(arr));
 
-        const promises = n => {
+        // const promises = n => {
+        //     return new Promise((resolve, reject) => {
+        //         if (n % 2 === 0) {
+        //             resolve("Done");
+        //         }
+        //         else {
+        //             reject("Rejected");
+        //         }
+        //     })
+        // };
+        // promises(6).then(message => console.log(message)).catch(message => console.log(message));
+        // promises(5).then(message => console.log(message)).catch(message => console.log(message));
+        // promises("no").then(message => console.log(message)).catch(message => console.log(message));
+        // promises(NaN).then(message => console.log(message)).catch(message => console.log(message));
+
+        const writeHello = () => {
             return new Promise((resolve, reject) => {
-                if (n % 2 === 0) {
-                    resolve("Done");
-                }
-                else {
-                    reject("Rejected");
-                }
+                resolve("Hello");
             })
         };
+<<<<<<< HEAD
+        writeHello().then((n) => {temp = document.getElementsByTagName("h1"); temp[0].innerText = n});
+=======
         promises(6).then(message => console.log(message)).catch(message => console.log(message));
         promises(5).then(message => console.log(message)).catch(message => console.log(message));
         promises("no").then(message => console.log(message)).catch(message => console.log(message));
@@ -454,6 +467,7 @@
 
 
         
+>>>>>>> d73ea789fee73c2293322ed96fc64c70440a7cca
 
     </script>
 </body>
