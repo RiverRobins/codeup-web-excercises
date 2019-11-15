@@ -3,28 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <title>River</title>
-<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
     <link rel="stylesheet" href="css/personal.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background-color: silver;
+            margin: 0;
+            padding: 0;
+        }
+        #smallest {
+            height: 100%;
+            width: 100%;
+            /*background-color: #111111;*/
+            opacity: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        #smallest p {
+            height: 100%;
+            width: 100%;
+            color: white;
+            text-decoration: none;
+            background-color: black;
+            display: inline-block;
+            text-align: center;
+            list-style: none;
+            padding: 30px;
+            border: 1px solid darkgray;
+            margin-bottom: 5px;
+            transition-duration: .25s;
+            box-shadow: 2px 2px 4px #555;
+        }
+        #smallest p:active {
+            border: 1px solid black;
+            background-color: darkgray;
+            color: black;
+            transition-duration: .1s;
+        }
+        #smallest p:hover {
+            border: 1px solid white;
+            text-shadow: 0px 0px 10px 10px white;
+            box-shadow: 10px 0px 10px 10px #aaa;
+        }
+        div.banner {
+            width: 100%;
+            height: 60vh;
+            background-image: url("../imgs/abandoned.jpg");
+            background-size: 100% 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        div.banner div {
+            width: 100%;
+            background-color: rgba(1, 1, 1, 0.5);
+            opacity: 75%;
+        }
+        div.banner p {
+            background: none;
+            opacity: unset;
+            color: white;
+            font-size: 30px;
+            text-align: center;
+            padding-right: 15%;
+            padding-left: 15%;
+            transition-duration: 2s;
+            transition: height;
+            text-shadow: 0px 0px 15px 10px red;
+        }
+        /*#content {*/
+        /*    padding: 10px;*/
+        /*    color: white;*/
+        /*    text-shadow: 0px 0px 15px 10px red;*/
+        /*}*/
+        @media screen and (min-width:570px) {
+            #smallest {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav id="smallest">
-        <a href=""> Home </a>
-        <a href=""> About Me </a>
-        <a href=""> Resume </a>
-        <a href=""> Contact </a>
+        <p onclick="welcome()"> Welcome </p>
+        <p onclick="about()"> About Me </p>
+        <p> Links </p>
+        <p> Contact </p>
     </nav>
     <div class="banner">
-        <div>
+        <div id="content">
             <p>Hello, I am River.</p>
         </div>
     </div>
-    <div class="meat">
+    <div class="footer">
         <div>
-            <p>Insert long paragraph here. Insert long paragraph here. Insert long paragraph here. Insert long paragraph here. Insert long paragraph here. Insert long paragraph here. Insert long paragraph here. Insert long paragraph here. Insert long paragraph here. Insert long paragraph here. Insert long paragraph here. Insert long paragraph here. Insert long paragraph here. Insert long paragraph here. Insert long paragraph here. Insert long paragraph here. Insert long paragraph here. Insert long paragraph here. Insert long paragraph here. Insert long paragraph here. </p>
+            <p>Footer</p>
         </div>
     </div>
-<!--    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
-<!--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+    <script>
+        function welcome() {
+            var temp = document.getElementById("content");
+            temp.innerHTML = "<p>Hello, I am River.</p>";
+        }
+        function about() {
+            var temp = document.getElementById("content");
+            temp.innerHTML = "<p>I am a job seeker currently attending the Codeup web developement program and set to graduate the Deimos cohort in early 2020. I have a passion for learning new things, especially related to programming and technology, that I intend to make the most of at every point possible.</p>";
+        }
+        function links() {
+            var temp = document.getElementById("content");
+            temp.innerHTML = "<p> Click to open";
+            temp.innerHTML += "<p>My GitHub profile(which includes the work I have done at Codeup) can be found <a target='blank' href='https://github.com/RiverRobins'>here</a>.</p><br>";
+            temp.innerHTML += "<p>My resume can be found <a href=''>here</a>";
+            temp.innerHTML += "<p>Insert other links here</p>"
+        }
+        function contact() {
+            var temp = document.getElementById("content");
+            temp.innerHTML = "<p>You can reach me at the phone number below or email me.</p>";
+            temp.innerHTML += "<p>Mobile: (210)-355-0811";
+            temp.innerHTML += "<p>Email: rivergrahamrobins@gmail.com</p>";
+        }
+    </script>
 </body>
 </html>

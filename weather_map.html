@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Map</title>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'/>
+    <style>
+        #meme{
+            display: none;
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        #meme img {
+            width: 100%;
+            height: auto;
+            max-height: 425px;
+        }
+        #map {
+            height: 400px;
+            width: 100%;
+            background-color: #000030;
+            color: lightblue;
+            text-shadow: 0px 0px 15px steelblue;
+            box-shadow: 0px 0px 10px 5px steelblue;
+        }
+        #main{
+            width: 70%;
+            margin-right: 15%;
+            margin-left: 15%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 15px;
+        }
+        #forecast {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        #inputs {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        input {
+            display: block;
+            border: 1px solid steelblue;
+            width: 1fr;
+            background-color: #000030;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            color: lightblue;
+        }
+        input:focus{
+            background-color: steelblue;
+            color: lightblue;
+            text-shadow: 0px 0px 15px steelblue;
+            box-shadow: 0px 0px 10px 5px steelblue;
+        }
+        button {
+            float: right;
+            border: none;
+            background-color: steelblue;
+            color: lightblue;
+        }
+        button:focus {
+            background-color: steelblue;
+            color: lightblue;
+            text-shadow: 0px 0px 15px steelblue;
+            box-shadow: 0px 0px 10px 5px steelblue;
+        }
+        .block {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            padding: 5px;
+            width: 175px;
+            height: auto;
+            align-content: center;
+            align-items: center;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+
+            border: 1px solid black;
+            color: black;
+            background-color: unset;
+        }
+        .icon {
+            background-color: unset;
+            border-radius: unset;
+        }
+        .sum {
+            align-self: flex-start;
+        }
+        .dark {
+            /*border: none;*/
+            color: gray;
+            background-color: #00002b;
+            box-shadow: 0px 0px 15px 5px steelblue;
+            text-shadow: 0px 0px 15px steelblue;
+            border: 1px solid lightblue;
+        }
+        .dark-text{
+            color: gray;
+            text-shadow: 0px 0px 15px steelblue;
+        }
+        .dark .icon {
+            display: inline-block;
+            padding: unset;
+            background-color: steelblue;
+            border-radius: 50%;
+            width: 50%;
+        }
+        .dark-background {
+            background-color: #000030;
+        }
+        .dark-main {
+            border: 1px solid lightblue;
+        }
+    </style>
+</head>
+<body>
+<div id="meme">
+    <img src="imgs/weather-icons/meme.png" alt="The Dark Side is a pathway to many abilities, come consider to be unnatural.">
+</div>
+<div id="main">
+    <div id="forecast">
+<!--        forecast generates here-->
+        <p>Not empty</p>
+    </div>
+    <div id="inputs">
+        <div id="input-address">
+            <label for="latitude">Enter Address</label>
+            <input type="text" id="address">
+            <button id="search-address">Search!</button>
+        </div>
+        <div id="input-cords">
+            <label for="latitude">Enter Latitude</label>
+            <input type="text" id="latitude">
+            <label for="longitude">Enter Longitude</label>
+            <input type="text" id="longitude">
+            <button id="search-cord">Search!</button>
+        </div>
+    </div>
+    <div id='map'></div>
+</div>
+
+<script src="js/jquery-2.2.4.js"></script>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script src="js/mapbox.geocoder-utils.js"></script>
+<script src="js/keys.js"></script>
+<script>
+
+    //defaults
+    var nLat, nLong, darkMode;
+    darkMode = true;
+    nLat = 29.4241;
+    nLong = -98.4936;
+
+    //colors
+    function applyTheme() {
+        $("html").addClass("dark-background");
+        $("#main").addClass("dark-main dark");
+        $(".card").addClass("dark");
+        $(".block").addClass("dark");
+        $("p").addClass("dark-text");
+    }
+
+    //applies theme immediately
+    applyTheme();
+
+    //Generates weather cards
+    function getWeather(lat, long) {
+        var darkSkyData = $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/" + lat + "," + long);  // generates URL for coords
+        darkSkyData.done(function (items) {
+            $("#forecast").empty();
+            for (var i = 0; i < 3; i++) {  //could replace 3 with however many days worth of info desired. Also For Loops are better than Foreach Loops.
+                var card = "<div class='block' id='block-" + (i + 1) +"'>";
+                card += "<p class='sum'>" + darkSkyData.responseJSON.daily.data[i].summary + "</p>";
+                card += "<p>Humidity will be " + (parseFloat(darkSkyData.responseJSON.daily.data[i].humidity) * 100) + "%.</p>";
+                card += "<p> The high for the day is " + darkSkyData.responseJSON.daily.data[i].temperatureHigh + "°F </p>";
+                card += "<p> The low for the day is " + darkSkyData.responseJSON.daily.data[i].temperatureLow + "°F </p>";
+                card += "<span class='icon'><img src='imgs/weather-icons/" + darkSkyData.responseJSON.daily.data[i].icon + ".svg'></span>";
+                card += "</div>";
+                $("#forecast").append(card);
+            }
+            applyTheme(); //applies colors to newly generated cards
+        });
+    }
+
+    //Generates the map
+    function showForecast(lat, long){  //29.4241 , -98.4936
+
+        //gets mapbox data
+        mapboxgl.accessToken = mapBoxKey;
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/dark-v9',
+            zoom: 2,
+            center: [nLong, nLat]
+        });
+
+        //generates the marker
+        getWeather(nLat, nLong);
+        var marker = new mapboxgl.Marker({
+            draggable: true
+        })
+            .setLngLat([nLong, nLat])
+            .addTo(map);
+
+        //gets coords on end
+        function onDragEnd() {
+            var lngLat = marker.getLngLat();
+            nLong = lngLat.lng;
+            nLat = lngLat.lat;
+            console.log(nLat + "\n" + nLong);
+            getWeather(nLat, nLong);
+        }
+        marker.on('dragend', onDragEnd);
+    }
+
+    //called immediately so that it shows on the page by default
+    showForecast(nLat, nLong);
+
+    //event listeners for buttons
+    $("#search-cord").click(function () { //for search by Lat/Long
+        nLat = parseFloat($("#latitude").val());
+        nLong = parseFloat($("#longitude").val());
+        showForecast(nLat, nLong);
+    });
+    $("#search-address").click(function () { //for search by address
+        var search = $("#address").val();
+        geocode(search, mapBoxKey).then(function(result) {
+            nLat = result[1];
+            nLong = result[0];
+            showForecast(nLat, nLong);
+        });
+    });
+
+    //Meme stuff below, not related to lesson
+    var code = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a", "Enter"];
+    var currPos= 0;
+    $(document).keyup(function(event){
+        if (event.key === code[currPos]) {
+            if (event.key === code[code.length -1]) {
+                currPos = 0;
+                $("#meme").css("display", "block");
+            }
+            else {
+                currPos++
+            }
+        }
+        else {
+            currPos = 0;
+        }
+    });
+</script>
+</body>
+</html>
